@@ -8,9 +8,6 @@ body {
     background-size: cover;
 }
 
-.charPicture {
-
-}
 .bg-black {
   background: #000;
   color: #fff; }
@@ -66,9 +63,7 @@ body {
     background-color: #f3de94;
 }
 
-.title-curve {
-    
-}
+
 
 .container-border {
     border: 20px solid #292b2d;
