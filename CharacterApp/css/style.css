@@ -1,0 +1,101 @@
+body {
+    background-image: url('../img/Cleric.png');
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.charPicture {
+
+}
+.bg-black {
+  background: #000;
+  color: #fff; }
+
+#main-header img {
+  width: 100%;
+  height: 100%; }
+
+#main-header .port-item {
+  width: 30%; }
+  #main-header .port-item .fa {
+    font-size: 2em; }
+
+#main-header .port-item:hover {
+  opacity: 0.8;
+  cursor: pointer; }
+
+.fb-icon,
+.linkedin-icon,
+.git-icon {
+    color: grey;
+    transition: color 0.5s;
+}
+
+
+.fb-icon:hover{
+    color: #0021bd;
+}
+
+.linkedin-icon:hover {
+    color: #0021bd;
+}
+
+.git-icon:hover{
+    color: #1b008e;
+}
+
+.title strong{
+    color: #8d0000;
+}
+
+.trait-tab,
+.skills-tab,
+.inventory-tab ,
+.BS-tab {
+    background-color: #F8ECC2;
+    color: #292c2e;
+    border: 2px solid #f5e5ab;
+    border-top-right-radius: 2em;
+}
+
+.tab-bg {
+    background-color: #f3de94;
+}
+
+.title-curve {
+    
+}
+
+.container-border {
+    border: 20px solid #292b2d;
+    border-radius: 2em;
+    background-color: #292b2d;
+    padding:1em;
+}
+
+@media screen and (max-width: 420px) {
+
+    .container-border {
+        border: 1.5em solid #292b2d;
+        border-radius: 2em;
+        background-color: #292b2d;
+        padding: 0.2em;
+    }
+
+    #main-header .port-item {
+        width: 25%;
+    }
+
+        #main-header .port-item .fa {
+            font-size: 1em;
+        }
+
+    body {
+        background-color:#f5e5ab;
+        overflow:no-display;
+    }
+}
