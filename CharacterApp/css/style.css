@@ -9,7 +9,7 @@ body {
 }
 
 .bg-black {
-  background: #000;
+  background: #0e0e0e;
   color: #fff; }
 
 #main-header img {
@@ -23,31 +23,30 @@ body {
 
 #main-header .port-item:hover {
   opacity: 0.8;
-  cursor: pointer; }
-
-.fb-icon,
-.linkedin-icon,
-.git-icon {
-    color: grey;
-    transition: color 0.5s;
+  cursor: pointer;
 }
 
-
-.fb-icon:hover{
-    color: #0021bd;
-}
-
-.linkedin-icon:hover {
-    color: #0021bd;
-}
-
-.git-icon:hover{
-    color: #1b008e;
-}
 
 .title strong{
     color: #8d0000;
 }
+
+
+.exp-button {
+    border-radius: 2em;
+    padding: 0.5em;
+    outline: none;
+    color:#fff;
+    background-color:#4d4d4d;
+}
+
+    .exp-button:hover {
+        opacity: 0.8;
+        cursor: pointer;
+        color: #c8c8c8;
+        background-color: #2a2a2a;
+    }
+
 
 .trait-tab,
 .skills-tab,
@@ -75,7 +74,7 @@ body {
 @media screen and (max-width: 420px) {
 
     .container-border {
-        border: 1.5em solid #292b2d;
+        border: 1em solid #292b2d;
         border-radius: 2em;
         background-color: #292b2d;
         padding: 0.2em;
@@ -94,3 +93,70 @@ body {
         overflow:no-display;
     }
 }
+
+.charPicture {
+    border: 5px solid #292b2d;
+
+}
+
+@media screen and (min-width: 568px) {
+    
+    .dice-img{
+        margin-left:25%;
+    }
+
+}
+
+@media screen and (min-width: 768px){
+    .exp-btn-block {
+        margin-left: 20%;
+    }
+}
+
+.dice-img:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.dice-img {
+    border: 2px solid #343a40;
+    background-size: contain !important;
+}
+
+
+#d20 {
+    background: url(../img/dice/D20.png) no-repeat center;
+}
+
+#d12 {
+    background: url(../img/dice/D12.png) no-repeat center;
+}
+    
+#d10 {
+    background: url(../img/dice/D10.png) no-repeat center;
+}
+
+#d8 {
+    background: url(../img/dice/D8.png) no-repeat center;
+}
+
+#d6 {
+    background: url(../img/dice/D6.png) no-repeat center;
+}
+
+#d4 {
+    background: url(../img/dice/D4.png) no-repeat center;
+}
+
+div.dice-button {
+    margin: 40px;
+    opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+}
+
+    div.dice-button p {
+        margin: 5%;
+        font-weight: bold;
+        color: #000;
+        font-size:1.2em;
+    }
