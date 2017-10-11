@@ -60,7 +60,5 @@ function d4() {
     
 }
 
-function changeColor() {
-    document.body.style.color = "purple";
-    return false;
-}
+
+

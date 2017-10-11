@@ -6,15 +6,29 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Almendra SC', serif;
+}
+
+h2 {
+    text-decoration: solid underline;
+}
+
+.Bstory {
+    font-family: 'Kaushan Script', cursive;
 }
 
 .bg-black {
   background: #0e0e0e;
   color: #fff; }
 
+.bg-page {
+    background-color:#F8ECC2;
+}
+
 #main-header img {
-  width: 100%;
-  height: 100%; }
+    width: 100%;
+    height: 100%;
+}
      
 #main-header .port-item {
   width: 30%; }
@@ -34,10 +48,11 @@ body {
 
 .exp-button {
     border-radius: 2em;
-    padding: 0.5em;
+    padding: 0.4em;
     outline: none;
     color:#fff;
     background-color:#4d4d4d;
+
 }
 
     .exp-button:hover {
@@ -105,9 +120,6 @@ div.dice-button {
     body {
         background-color:#f5e5ab;
         overflow:no-display;
-    }
-
-    .dice-img {
     }
 
     div.dice-button {
