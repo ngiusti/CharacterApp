@@ -15,7 +15,7 @@ body {
 #main-header img {
   width: 100%;
   height: 100%; }
-
+     
 #main-header .port-item {
   width: 30%; }
   #main-header .port-item .fa {
@@ -71,6 +71,20 @@ body {
     padding:1em;
 }
 
+div.dice-button {
+    margin: 30px;
+    opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+
+}
+
+    div.dice-button p {
+        margin: 5%;
+        font-weight: bold;
+        color: #000;
+        font-size: 1.2em;
+    }
+
 @media screen and (max-width: 420px) {
 
     .container-border {
@@ -92,6 +106,22 @@ body {
         background-color:#f5e5ab;
         overflow:no-display;
     }
+
+    .dice-img {
+    }
+
+    div.dice-button {
+        margin: 20px;
+        opacity: 0.9;
+        filter: alpha(opacity=90); /* For IE8 and earlier */
+    }
+
+        div.dice-button p {
+            font-weight: bold;
+            color: #000;
+            font-size:.75em;
+        }
+
 }
 
 .charPicture {
@@ -121,6 +151,7 @@ body {
 .dice-img {
     border: 2px solid #343a40;
     background-size: contain !important;
+    
 }
 
 
@@ -148,15 +179,3 @@ body {
     background: url(../img/dice/D4.png) no-repeat center;
 }
 
-div.dice-button {
-    margin: 40px;
-    opacity: 0.9;
-    filter: alpha(opacity=90); /* For IE8 and earlier */
-}
-
-    div.dice-button p {
-        margin: 5%;
-        font-weight: bold;
-        color: #000;
-        font-size:1.2em;
-    }
