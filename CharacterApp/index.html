@@ -74,18 +74,8 @@
                     <div class="card bg-inpage mt-2">
                         <div class="card-body ">
                             <div class="flex-row d-flex ">
-                                <i class="fa fa-shield fa-2x d-block pr-2"></i><h3 class="card-title"> Armor Class-</h3>
-                                <div class="ability">
-                                    12
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card bg-inpage mt-2">
-                        <div class="card-body ">
-                            <div class="flex-row d-flex ">
-                                <i class="fa fa-thumbs-o-up fa-2x d-block pr-2"></i><h3 class="card-title"> Intiative-</h3>
-                                <div class="ability">
+                                <i class="fa fa-shield fa-2x d-block pr-2"></i><h3 class="card-title"> Armor-</h3>
+                                <div class="ability" id="arm-base">
                                     12
                                 </div>
                             </div>
@@ -95,68 +85,85 @@
                         <div class="card-body">
                             <div class="flex-row d-flex ">
                                 <i class="fa fa-angle-double-right fa-2x d-block pr-2"></i><h3 class="card-title"> Speed-</h3>
-                                <div class="ability">
+                                <div class="ability" id="speed-base">
                                     12
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="card bg-inpage mt-2">
+                        <button class="card-body bg-inpage" id="inti-btn">
+                            <div class="flex-row d-flex ">
+                                <i class="fa fa-thumbs-o-up fa-2x d-block pr-2"></i><h3 class="card-title" > Intiative-</h3>
+                                <div class="ability"id="inti-base">
+                                    12
+                                </div>
+                            </div>
+                        </button>
                     </div>
                 </div>
             </div>
             <div class="card card-body py-5 section-container bg-offwhite bg-page">
                 <h2 class="text-center">Attributes</h2>
+                <div class="row">
+                    <p class="col-4"></p>
+                    <p id="attribute" class="col-4 text-center display-box">Roll</p>
+                </div>
                 <div class="card-deck ">
                     <div class="card bg-inpage mt-2">
                         <div class="card-body">
                             <div class="flex-row d-flex ">
-                                <h3 class="card-title"> Strength-</h3>
-                                <div class="ability">
+                                <h3 class="card-title minor-titles"> Strength-</h3>
+                                <div class="ability" id="str-base">
                                     12
                                 </div>
-                                <div class="throws">
+                                <div class="throws" id="str-throw">
                                     +1
                                 </div>
                             </div>
-                            <h3>Skills Affected</h3>
+                            <h3 class="minor-titles">Skills Affected</h3>
                             <ul>
-                                <li> -Athletics +1</li>
+                                <li > -Athletics </li>
                             </ul>
+                            <button class="col-12 text-center exp-button"  id="str-btn" >Roll</button>
                         </div>
                     </div>
                     <div class="card bg-inpage mt-2">
                         <div class="card-body">
                             <div class="flex-row d-flex ">
-                                <h3 class="card-title"> Dexterity-</h3>
-                                <div class="ability">
+                                <h3 class="card-title minor-titles"> Dexterity-</h3>
+                                <div class="ability" id="dex-base">
                                     12
                                 </div>
-                                <div class="throws">
+                                <div class="throws" id="dex-throw">
                                     +1
                                 </div>
                             </div>
-                            <h3>Skills Affected</h3>
+                            <h3 class="minor-titles">Skills Affected</h3>
                             <ul>
-                                <li> -Acrobatics +1</li>
-                                <li> -Sleight of Hand +1</li>
-                                <li> -Stealth +1</li>
+                                <li> -Acrobatics </li>
+                                <li> -Sleight of Hand </li>
+                                <li> -Stealth </li>
                             </ul>
+                            <button class="col-12 text-center exp-button" id="dex-btn">Roll</button>
                         </div>
                     </div>
                     <div class="card bg-inpage mt-2">
                         <div class="card-body">
                             <div class="flex-row d-flex ">
-                                <h3 class="card-title"> Constitution-</h3>
-                                <div class="ability">
+                                <h3 class="card-title minor-titles"> Constitution-</h3>
+                                <div class="ability" id="cons-base">
                                     12
                                 </div>
-                                <div class="throws">
+                                <div class="throws" id="cons-throw">
                                     +1
                                 </div>
                             </div>
-                            <h3>Skills Affected</h3>
+                            <h3 class="minor-titles">Skills Affected</h3>
                             <ul>
                                 <li>Nothing</li>
                             </ul>
+                            <button class="col-12 text-center exp-button" id="cons-btn">Roll</button>
                         </div>
                     </div>
                 </div>
@@ -164,63 +171,66 @@
                     <div class="card bg-inpage mt-2">
                         <div class="card-body ">
                             <div class="flex-row d-flex ">
-                                <h3 class="card-title"> Intelligence-</h3>
-                                <div class="ability">
+                                <h3 class="card-title minor-titles"> Intelligence-</h3>
+                                <div class="ability" id="int-base">
                                     12
                                 </div>
-                                <div class="throws">
+                                <div class="throws" id="int-throw">
                                     +1
                                 </div>
                             </div>
-                            <h3>Skills Affected</h3>
+                            <h3 class="minor-titles">Skills Affected</h3>
                             <ul>
-                                <li> -Arcana +1</li>
-                                <li> -History +1</li>
-                                <li> -Investigation +1</li>
-                                <li> -Nature +1</li>
-                                <li> -Religion +1</li>
+                                <li> -Arcana </li>
+                                <li> -History </li>
+                                <li> -Investigation </li>
+                                <li> -Nature </li>
+                                <li> -Religion </li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="card bg-inpage mt-2">
-                        <div class="card-body ">
-                            <div class="flex-row d-flex ">
-                                <h3 class="card-title"> Wisdom-</h3>
-                                <div class="ability">
-                                    12
-                                </div>
-                                <div class="throws">
-                                    +1
-                                </div>
-                            </div>
-                            <h3>Skills Affected</h3>
-                            <ul>
-                                <li> -Animal Handling  +1</li>
-                                <li> -Insight  +1</li>
-                                <li> -Medicine  +1</li>
-                                <li> -Perception  +1</li>
-                                <li> -Survival  +1</li>
-                            </ul>
+                            <button class="col-12 text-center exp-button" id="int-btn">Roll</button>
                         </div>
                     </div>
                     <div class="card bg-inpage mt-2">
                         <div class="card-body">
                             <div class="flex-row d-flex ">
-                                <h3 class="card-title"> Charisma-</h3>
-                                <div class="ability">
+                                <h3 class="card-title minor-titles"> Wisdom-</h3>
+                                <div class="ability" id="wis-base">
                                     12
                                 </div>
-                                <div class="throws">
+                                <div class="throws" id="wis-throw">
                                     +1
                                 </div>
                             </div>
-                            <h3>Skills Affected</h3>
+                            <h3 class="minor-titles">Skills Affected</h3>
                             <ul>
-                                <li> -Deception +1</li>
-                                <li> -Intimidation +1</li>
-                                <li> -Performance +1</li>
-                                <li> -Persuasion +1</li>
+                                <li> -Animal Handling  </li>
+                                <li> -Insight  </li>
+                                <li> -Medicine  </li>
+                                <li> -Perception  </li>
+                                <li> -Survival  </li>
                             </ul>
+                            <button class="col-12 text-center exp-button" id="wis-btn">Roll</button>
+                        </div>
+                    </div>
+                    <div class="card bg-inpage mt-2">
+                        <div class="card-body ">
+                            <div class="flex-row d-flex ">
+                                <h3 class="card-title minor-titles"> Charisma-</h3>
+                                <div class="ability" id="char-base">
+                                    12
+                                </div>
+                                <div class="throws" id="char-throw">
+                                    
+                                </div>
+                            </div>
+                            <h3 class="minor-titles">Skills Affected</h3>
+                            <ul>
+                                <li> -Deception </li>
+                                <li> -Intimidation </li>
+                                <li> -Performance </li>
+                                <li> -Persuasion </li>
+                            </ul>
+                            <button class="col-12 text-center exp-button" id="char-btn">Roll</button>
                         </div>
                     </div>
                 </div>
@@ -232,8 +242,91 @@
                 <h2>Skills</h2>
                 <p>What powers does your character have?</p>
             </div>
-            <div class="card card-body py-5 section-container bg-offwhite">
-                
+            <div class="card card-body py-5 section-container  bg-page">
+                <div class="card-deck ">
+                    <div class="card bg-inpage mt-2 ">
+                        <div class="card-body ">
+                            <div class="flex-row d-flex ">
+                                <h3 class="card-title minor-titles"> Feats</h3>
+                            </div>
+                            <div>
+                                <div>
+                                    <h3 class="minor-titles">Ritual Caster - Wizard</h3>
+                                    <p>
+                                        When you choose this feat, you acquire a ritual book holding two 1st-level spells of your choice.
+                                        The process of copying the spell into your ritual book takes 2 hours per level of the spell, and costs 50 gp per level.
+                                    </p>
+                                    <ul>
+                                        <li><strong>Sleep</strong> - <p>This spell sends creatures into a magical slumber. Roll 5d8, the total is how many hit points of creatures this spell can affect…</p></li>
+                                        <li><strong>Hideous Laughter</strong> - <p> A creature of your choice that you can see within range perceives everything as hilariously funny and falls into fits of laugher if this spell affects it. The target must succeed on a Wisdom saving throw of fall prone, becoming incapacitated and unable to stand up for the duration…</p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="card bg-inpage mt-2">
+                        <div class="card-body ">
+                            <div>
+                                <h3 class="card-title minor-titles"> Spells</h3>
+                            </div>
+                            <div>
+                                <h3 class="minor-titles">Cleric Spells</h3>
+                                <h4 class="minor-titles">Cantrips</h4>
+                                <ul>
+                                    <li><strong>Light (Range Touch )</strong> <p>You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet.</p></li>
+                                    <li><strong>Mending (Range Touch )</strong> <p>This spell repairs a single break or tear in an object you touch.</p></li>
+                                    <li><strong>Sacred Flame (Range 60ft)</strong> <p>Flame-like radiance descends on a creature that you can see within range. The target must succeed on a Dexterity saving throw or take 1d8 radiant damage. </p></li>
+                                    <li><strong>Spare the Dying (Range Touch )</strong> <p>You touch a living creature that has 0 hit points. The creature becomes stable. This spell has no effect on undead or constructs.</p></li>
+                                </ul >
+                                <h4 class="minor-titles">Level 1</h4>
+                                <ul>
+                                    <li><strong>Cure Wounds (Range Touch )</strong> <p>A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. </p></li>
+                                    <li><strong>Healing Word (Range 60ft )</strong> <p>A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs.</p></li>
+                                    <li><strong>Inflict Wounds (Range Touch )</strong> <p>Make a melee spell attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage.</p></li>
+                                    <li><strong>Protection from Evil and Good (Range Touch )</strong> <p>Until the spell ends, one willing creature you touch is protected against certain types of creatures: aberrations, celestials, elementals, fey, fiends, and undead.
+The protection grants several benefits. Creatures of those types have disadvantage on attack rolls against the target. The target also can't be charmed, frightened, or possessed by them. If the target is already charmed, frightened, or possessed by such a creature, the target has advantage on any new saving throw against the relevant effect.</p></li>
+                                </ul>
+                                <h4 class="minor-titles">>Level 2</h4>
+                                <ul>
+                                    <li><strong>Lesser Restoration (Range Touch )</strong> <p>You touch a creature and can end either one disease or one condition afflicting it. The condition can be blinded, deafened, paralyzed, or poisoned.</p></li>
+                                    <li><strong>Prayer of Healing (Range Touch )</strong> <p>Up to six creatures of your choice that you can see within range each regain hit points equal to 2d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.</p></li>
+                                    <li><strong>Spiritual Weapon (Range Touch )</strong> <p>You create a floating, spectral weapon within range that lasts for the duration or until you cast this spell again. When you cast the spell, you can make a melee spell attack against a creature within 5 feet of the weapon. On a hit, the target takes force damage equal to 1d8 + your spellcasting ability modifier. </p></li>
+                                </ul>
+                                <h4 class="minor-titles">>Level 3</h4>
+                                <ul>
+                                    <li><strong>Animate Dead (Range 10 ft)</strong> <p>This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature. The target becomes a skeleton if you chose bones or a zombie if you chose a corpse (the GM has the creature's game statistics). </p></li>
+                                    <li><strong>Speak with Dead (Range 10 ft )</strong> <p>You grant the semblance of life and intelligence to a corpse of your choice within range, allowing it to answer the questions you pose. The corpse must still have a mouth and can't be undead. The spell fails if the corpse was the target of this spell within the last 10 days. </p></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="card bg-inpage mt-2">
+                        <div class="card-body">
+                            <div >
+                                <h3 class="card-title minor-titles"> Other Proficiencies and Languages</h3>
+                            </div>
+                            <div class="flex-row d-flex">
+                                <div class="languages">
+                                    <h3 class="minor-titles">Weapon Proficiences</h3>
+                                    <ul>
+                                        <li>Sling</li>
+                                        <li>One Handed Mace</li>
+                                        <li>Two Handed Mace</li>
+                                    </ul>
+                                    <h3 class="minor-titles">Languages</h3>
+                                    <ul>
+                                        <li>Common</li>
+                                        <li>Dwarvish</li>
+                                        <li>Infernal</li>
+                                        <li>Primordial</li>
+                                    </ul>                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 

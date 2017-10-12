@@ -11,7 +11,7 @@ body {
 
 .hp{
     padding-top:7px;
-    padding-left:30px;
+    padding-left:20px;
     font-size:40px;
 }
 
@@ -179,7 +179,7 @@ div.dice-button {
 }
 
 
-#d20 {
+#d20, .attributes{
     background: url(../img/dice/D20.png) no-repeat center;
 }
 
@@ -213,11 +213,23 @@ div.dice-button {
 }
 
 .throws {
-    padding-top:0px;
+    
     font-size: 25px;
     padding-left: 10px;
 }
 
 li{
     font-size:20px;
+}
+
+.display-box{
+    background-color:#fff;
+    color:#000;
+    font-size:30px;
+    border: 5px solid #292c2e;
+}
+
+.minor-titles{
+    font-style:italic;
+    font-weight:bold;
 }
