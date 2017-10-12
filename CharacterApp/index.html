@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Almendra+SC|Kaushan+Script|Metal+Mania" rel="stylesheet"></head>
-<body>
+<body>  
     <div class="container container-border">
         <header id="main-header">
             <div class="row no-gutters">
@@ -28,17 +28,20 @@
                                 <div class="topSpan flex-row d-flex top2">
                                     <div class="charClass p-2">Class: Cleric</div>
                                     <div class="charRace p-2">Race: Dwarf</div>
-                                    <div class="charLvl p-2">Level: 5</div>
+                                    <div class="charLvl p-2" id="charLevel">lvl</div>
                                     <div class="charAlignment p-2">Chaotic Evil</div>
                                 </div>
+                                <div class=" flex-row d-flex">
+                                    <div id="experience"></div>
+                                </div>
                                 <div class="progress mb-3">
-                                    <div class="progress-bar bg-success" style="width:100%">100%</div>
+                                    <div class="progress-bar bg-success" style="width:50%" id="lvl-percent">100%</div>
                                 </div>
                                 <div class="exp-btn-block">
-                                    <button class="exp-button">+50</button>
-                                    <button class="exp-button">+100</button>
-                                    <button class="exp-button">+500</button>
-                                    <button class="exp-button">+1000</button>
+                                    <button class="exp-button" id="btn-50">+50</button>
+                                    <button class="exp-button" id="btn-100">+100</button>
+                                    <button class="exp-button" id="btn-500">+500</button>
+                                    <button class="exp-button" id="btn-1000">+1000</button>
                                 </div>
                             </div>
                         </div>
@@ -281,19 +284,19 @@
                                 </ul >
                                 <h4 class="minor-titles">Level 1</h4>
                                 <ul>
-                                    <li><strong>Cure Wounds (Range Touch )</strong> <p>A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. </p></li>
+                                    <li><strong>Cure Wounds(Range Touch )</strong> <p>A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. </p></li>
                                     <li><strong>Healing Word (Range 60ft )</strong> <p>A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs.</p></li>
                                     <li><strong>Inflict Wounds (Range Touch )</strong> <p>Make a melee spell attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage.</p></li>
                                     <li><strong>Protection from Evil and Good (Range Touch )</strong> <p>Until the spell ends, one willing creature you touch is protected against certain types of creatures: aberrations, celestials, elementals, fey, fiends, and undead.
 The protection grants several benefits. Creatures of those types have disadvantage on attack rolls against the target. The target also can't be charmed, frightened, or possessed by them. If the target is already charmed, frightened, or possessed by such a creature, the target has advantage on any new saving throw against the relevant effect.</p></li>
                                 </ul>
-                                <h4 class="minor-titles">>Level 2</h4>
+                                <h4 class="minor-titles">Level 2</h4>
                                 <ul>
                                     <li><strong>Lesser Restoration (Range Touch )</strong> <p>You touch a creature and can end either one disease or one condition afflicting it. The condition can be blinded, deafened, paralyzed, or poisoned.</p></li>
                                     <li><strong>Prayer of Healing (Range Touch )</strong> <p>Up to six creatures of your choice that you can see within range each regain hit points equal to 2d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.</p></li>
                                     <li><strong>Spiritual Weapon (Range Touch )</strong> <p>You create a floating, spectral weapon within range that lasts for the duration or until you cast this spell again. When you cast the spell, you can make a melee spell attack against a creature within 5 feet of the weapon. On a hit, the target takes force damage equal to 1d8 + your spellcasting ability modifier. </p></li>
                                 </ul>
-                                <h4 class="minor-titles">>Level 3</h4>
+                                <h4 class="minor-titles">Level 3</h4>
                                 <ul>
                                     <li><strong>Animate Dead (Range 10 ft)</strong> <p>This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature. The target becomes a skeleton if you chose bones or a zombie if you chose a corpse (the GM has the creature's game statistics). </p></li>
                                     <li><strong>Speak with Dead (Range 10 ft )</strong> <p>You grant the semblance of life and intelligence to a corpse of your choice within range, allowing it to answer the questions you pose. The corpse must still have a mouth and can't be undead. The spell fails if the corpse was the target of this spell within the last 10 days. </p></li>
