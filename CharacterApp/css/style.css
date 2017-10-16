@@ -1,5 +1,5 @@
 body {
-    background-image: url('../img/Cleric.png');
+    background-color: #d0d0d0;
     /* Full height */
     height: 100%;
     /* Center and scale the image nicely */
@@ -74,6 +74,9 @@ h2 {
         background-color: #2a2a2a;
     }
 
+    .exp-button:disabled {
+        background-color: #8d0000;
+    }
 
 .trait-tab,
 .skills-tab,
@@ -233,4 +236,13 @@ li{
     font-style:italic;
     font-weight:bold;
 }
+
+.blockTitles {
+    background-color: #d1c492;
+    text-align: center;
+    padding-top: 10px;
+    margin: -20px -20px 0 -20px;
+    border-bottom: 2px solid #928760;
+}
+
 

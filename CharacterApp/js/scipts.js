@@ -11,6 +11,9 @@ var spd = 20;
 var inti = throwCalculation(dex);
 var scm = throwCalculation(wis);
 var exp = 0;
+var skillPoints = 0;
+var levelValues = [-1, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 195000, 225000, 265000, 305000, 355000];
+var newLvl = 0;
 /*---Character Stats---*/
 
 
@@ -19,7 +22,6 @@ var exp = 0;
 $('.port-item').click(function () {
     $('.collapse').collapse('hide');
 });
-
 
 function d20() {
     var x = Math.floor(Math.random() * 20 + 1);
@@ -115,6 +117,8 @@ function roll() {
 
 /*-----Button Rolls End----------------*/
 
+
+/*-----Character Stats fucntions----*/
 function throwCalculation(x) {
     var stat = Math.floor((x - 10) / 2);
     return stat;
@@ -180,31 +184,78 @@ function charStats() {
     speed();
 }
 
-function levels() {
-    
-    var levels = [-1, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 195000, 225000, 265000, 305000, 355000];
+/*-----Character Stats fucntions END ----*/
 
-    for (var i = 0; i < levels.length; i++) {
-        if (exp <= levels[i]) {
+
+/*-----Character Level ----*/
+function levels(newLvl) {
+    
+    for (var i = 0; i < levelValues.length; i++) {
+        if (exp <= levelValues[i]) {
             curLvl = i;
-            curLvlExp = levels[i];
+            curLvlExp = levelValues[i];
             lvlPercent = (exp / curLvlExp * 100).toFixed(2);
-            document.getElementById('lvl-percent').innerHTML = lvlPercent;
-            document.getElementById("lvl-percent").style.width = lvlPercent + '%';
-            document.getElementById('charLevel').innerHTML = "Level: " + curLvl;
-            document.getElementById('experience').innerHTML = exp + "/" + curLvlExp;
+            levelDisplay(lvlPercent, curLvl, curLvlExp);
+
+            if (newLvl !== curLvl) {
+                levelUp(curLvl);
+            }
             return;
-        }     
-    }   
+        
+        }
+    }
+
     
 }
 
-document.getElementById("btn-50").onclick = function () { exp += 50; levels(); };
-document.getElementById("btn-100").onclick = function () { exp = exp + 100; levels(); };
-document.getElementById("btn-500").onclick = function () { exp = exp + 500; levels(); };
-document.getElementById("btn-1000").onclick = function () { exp = exp + 1000; levels(); };
+
+function levelDisplay(lvlPercent, curLvl, curLvlExp) {
+    document.getElementById('lvl-percent').innerHTML = lvlPercent;
+    document.getElementById("lvl-percent").style.width = lvlPercent + '%';
+    document.getElementById('charLevel').innerHTML = "Level: " + curLvl;
+    document.getElementById('experience').innerHTML = exp + "/" + curLvlExp;
+}
+
+function levelUp(curLvl) {
+
+    if (curLvl % 4 === 0) {
+        console.log('feat?');
+    }
+    else {
+        skillPoints += 1;
+        document.getElementById("strSP").disabled = false;
+
+        console.log(skillPoints);
+    }
+    document.getElementById("skillPoints").innerHTML = skillPoints;
+
+    return skillPoints;
+}
 
 
+
+
+document.getElementById("btn-50").onclick = function () { exp += 50; newLvl = curLvl; levels(newLvl); };
+document.getElementById("btn-100").onclick = function () { exp = exp + 100; newLvl = curLvl; levels(newLvl); };
+document.getElementById("btn-500").onclick = function () { exp = exp + 500; newLvl = curLvl; levels(newLvl); };
+document.getElementById("btn-1000").onclick = function () { exp = exp + 1000; newLvl = curLvl; levels(newLvl); };
+
+/*-----Character Level END----*/
+
+document.getElementById("strSP").onclick = function () { addSkillPoint(); };
+
+function addSkillPoint() {
+
+    if (skillPoints > 0) {
+        skillPoints -= 1;
+        str += 1;
+        charStats();
+        document.getElementById("skillPoints").innerHTML = skillPoints;
+    }
+    else {
+        document.getElementById("strSP").disabled = true;
+    }
+}
 
 /* ---- Everything on load starts here. ----*/
 $(document).ready(function () {
