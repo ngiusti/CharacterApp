@@ -14,10 +14,20 @@ var exp = 0;
 var skillPoints = 0;
 var levelValues = [-1, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 195000, 225000, 265000, 305000, 355000];
 var newLvl = 0;
+var health = healthFunction(cons);
+var hp = health;
+var featPoints = 0;
+var copperInventory = 0;
+var silverInventory = 0;
+var goldInventory = 0;
+var platinumInventory = 0;
+var moneyInventory = [copperInventory, silverInventory, goldInventory, platinumInventory]
+var moneyHolder = 0;
 /*---Character Stats---*/
 
-
-
+/*---connection to other script files---*/
+$.getScript('/js/ajax.js', function () { });
+/*---connection to other script files END---*/
 
 $('.port-item').click(function () {
     $('.collapse').collapse('hide');
@@ -76,37 +86,67 @@ function d4() {
 
 document.getElementById("str-btn").onclick = function () {
     var x = roll();
-    document.getElementById("attribute").innerHTML = x + throwCalculation(str);
-};
+    if (x === 1) {
+        document.getElementById("attribute").innerHTML = x;
+    }
+    else {
+        document.getElementById("attribute").innerHTML = x + throwCalculation(str);
+    }};
 
 document.getElementById("dex-btn").onclick = function () {
     var x = roll();
-    document.getElementById("attribute").innerHTML = x + throwCalculation(dex);
-};
+    if (x === 1) {
+        document.getElementById("attribute").innerHTML = x;
+    }
+    else {
+        document.getElementById("attribute").innerHTML = x + throwCalculation(dex);
+    }};
 
 document.getElementById("wis-btn").onclick = function () {
     var x = roll();
-    document.getElementById("attribute").innerHTML = x + throwCalculation(wis);
-};
+    if (x === 1) {
+        document.getElementById("attribute").innerHTML = x;
+    }
+    else {
+        document.getElementById("attribute").innerHTML = x + throwCalculation(wis);
+    }};
 
 document.getElementById("int-btn").onclick = function () {
     var x = roll();
-    document.getElementById("attribute").innerHTML = x + throwCalculation(int);
-};
+    if (x === 1) {
+        document.getElementById("attribute").innerHTML = x;
+    }
+    else {
+        document.getElementById("attribute").innerHTML = x + throwCalculation(int);
+    }};
 
 document.getElementById("cons-btn").onclick = function () {
     var x = roll();
-    document.getElementById("attribute").innerHTML = x + throwCalculation(cons);
-};
+    if (x === 1) {
+        document.getElementById("attribute").innerHTML = x;
+    }
+    else {
+        document.getElementById("attribute").innerHTML = x + throwCalculation(cons);
+    }};
 
 document.getElementById("char-btn").onclick = function () {
     var x = roll();
-    document.getElementById("attribute").innerHTML = x + throwCalculation(char);
-};
+    if (x === 1) {
+        document.getElementById("attribute").innerHTML = x;
+    }
+    else {
+        document.getElementById("attribute").innerHTML = x + throwCalculation(char);
+    }};
 
 document.getElementById("inti-btn").onclick = function () {
     var x = roll();
-    document.getElementById("attribute").innerHTML = x + inti;
+    if (x === 1) {
+        document.getElementById("attribute").innerHTML = x;
+    }
+    else {
+        document.getElementById("attribute").innerHTML = x + inti;
+    }
+
 };
 
 
@@ -114,6 +154,23 @@ function roll() {
     var x = Math.floor(Math.random() * 20 + 1);
     return x;
 }
+
+
+document.getElementById("hpUp").onclick = function () {
+    if (hp < health) {
+        hp += 1;
+        document.getElementById("health").innerHTML = "HP: " + hp + "/" + health;
+    }
+};
+document.getElementById("hpDown").onclick = function () {
+    if (hp > 0) {
+        hp -= 1;
+        document.getElementById("health").innerHTML = "HP: " + hp + "/" + health;
+    }
+    else if (hp === 0) {
+        document.getElementById("health").innerHTML = "DEAD";
+    }
+};
 
 /*-----Button Rolls End----------------*/
 
@@ -123,6 +180,13 @@ function throwCalculation(x) {
     var stat = Math.floor((x - 10) / 2);
     return stat;
 }
+
+function healthFunction(x) {
+    var healthCalc = 8 + x;
+    return healthCalc;
+}
+
+
 
 function charisma() {
     document.getElementById("char-base").innerHTML = char;
@@ -210,7 +274,7 @@ function levels(newLvl) {
 
 
 function levelDisplay(lvlPercent, curLvl, curLvlExp) {
-    document.getElementById('lvl-percent').innerHTML = lvlPercent;
+    document.getElementById('lvl-percent').innerHTML = lvlPercent + '%';
     document.getElementById("lvl-percent").style.width = lvlPercent + '%';
     document.getElementById('charLevel').innerHTML = "Level: " + curLvl;
     document.getElementById('experience').innerHTML = exp + "/" + curLvlExp;
@@ -220,18 +284,34 @@ function levelUp(curLvl) {
 
     if (curLvl % 4 === 0) {
         console.log('feat?');
+        featPoints += 1;
+        console.log(featPoints);
+        health += 5 + throwCalculation(cons);
+        hp = health;
     }
-    else {
+    else if (curLvl > 1){
         skillPoints += 1;
-        document.getElementById("strSP").disabled = false;
-
-        console.log(skillPoints);
+        health += 5 + throwCalculation(cons);
+        hp = health;
+        enableBtn();        
     }
+    document.getElementById("health").innerHTML = "HP: " + hp + "/" + health;
     document.getElementById("skillPoints").innerHTML = skillPoints;
-
-    return skillPoints;
+    document.getElementById("featPoints").innerHTML = featPoints;
 }
 
+function transferFeatPoints() {
+
+    if (featPoints > 0) {
+        featPoints -= 1;
+        skillPoints += 2;
+    }
+    enableBtn();
+    document.getElementById("skillPoints").innerHTML = skillPoints;
+    document.getElementById("featPoints").innerHTML = featPoints;   
+}
+
+document.getElementById("featTrans").onclick = function () { transferFeatPoints(); };
 
 
 
@@ -242,24 +322,178 @@ document.getElementById("btn-1000").onclick = function () { exp = exp + 1000; ne
 
 /*-----Character Level END----*/
 
-document.getElementById("strSP").onclick = function () { addSkillPoint(); };
+
+/*-------lvl up section-----*/
+document.getElementById("strSP").onclick = function () { str += 1; addSkillPoint(); };
+document.getElementById("dexSP").onclick = function () { dex += 1; addSkillPoint(); };
+document.getElementById("consSP").onclick = function () { cons += 1; addSkillPoint(); };
+document.getElementById("charSP").onclick = function () { char += 1; addSkillPoint(); };
+document.getElementById("wisSP").onclick = function () { wis += 1; addSkillPoint(); };
+document.getElementById("intSP").onclick = function () { int += 1; addSkillPoint(); };
+
+
 
 function addSkillPoint() {
 
     if (skillPoints > 0) {
+
         skillPoints -= 1;
-        str += 1;
         charStats();
         document.getElementById("skillPoints").innerHTML = skillPoints;
+        disableBtn();
     }
-    else {
-        document.getElementById("strSP").disabled = true;
-    }
+
 }
+
+function enableBtn() {
+    document.getElementById("strSP").disabled = false;
+    document.getElementById("dexSP").disabled = false;
+    document.getElementById("intSP").disabled = false;
+    document.getElementById("wisSP").disabled = false;
+    document.getElementById("consSP").disabled = false;
+    document.getElementById("charSP").disabled = false;
+
+}
+
+function disableBtn(){
+    if (skillPoints === 0) {
+        document.getElementById("strSP").disabled = true;
+        document.getElementById("dexSP").disabled = true;
+        document.getElementById("intSP").disabled = true;
+        document.getElementById("wisSP").disabled = true;
+        document.getElementById("consSP").disabled = true;
+        document.getElementById("charSP").disabled = true;
+    }
+    return;
+}
+
+/*-------lvl up section END-----*/
+
+/*-----Money Section---*/
+
+function initMoney() {
+    document.getElementById("copper").innerHTML = moneyInventory[0];
+    document.getElementById("silver").innerHTML = moneyInventory[1]
+    document.getElementById("gold").innerHTML = moneyInventory[2]
+    document.getElementById("platinum").innerHTML = moneyInventory[3];
+
+}
+
+function ifIsNaN(value) {
+    if (isNaN(value)) {
+        return 0;
+    }
+    return value;
+}
+
+function updateMoneyInventories() {
+    document.getElementById("copper").innerHTML = moneyInventory[0];
+    document.getElementById("silver").innerHTML = moneyInventory[1];
+    document.getElementById("gold").innerHTML = moneyInventory[2];
+    document.getElementById("platinum").innerHTML = moneyInventory[3];
+}
+
+/* Addition Section */
+function addMoney(value) {
+    var digits = [];
+    while (value > 0) {
+        digits[digits.length] = value % 10;
+        value = parseInt(value / 10);
+    }
+    for (var i = 0; i <= 2; i++) {
+        moneyInventory[i] += ifIsNaN(digits[i]);
+    }
+    for ( i = 3; i < digits.length; i++) {
+        var multipler = Math.pow(10,(i-3))
+        moneyInventory[3] += digits[i] * multipler;
+    }
+    upChainInventory();
+    updateMoneyInventories();
+}
+
+function upChainInventory() {
+    for (var i = 0; i < 3; i++) {
+        if (moneyInventory[i] > 9) {
+            moneyInventory[i+1] += Math.floor(moneyInventory[i] / 10);
+            moneyInventory[i] = moneyInventory[i] % 10;
+        }
+    }
+    
+}
+
+function addCopper() {
+    var value = parseInt(document.getElementById("copperValue").value);
+    var copperValue = addMoney(value);
+}
+function addSilver() {
+    var value = parseInt(document.getElementById("silverValue").value) * 10;
+    var silverValue = addMoney(value);
+}
+
+function addGold() {
+    var value = parseInt(document.getElementById("goldValue").value) * 100;
+    var goldValue = addMoney(value);
+}
+
+function addPlatinum() {
+    var value = parseInt(document.getElementById("platinumValue").value) * 1000;
+    var platinumValue = addMoney(value);
+}
+
+/* Subtract section */
+function subCopper() {
+    var value = parseInt(document.getElementById("copperValue").value);
+    var copperValue = subMoney(value);
+}
+function subSilver() {
+    var value = parseInt(document.getElementById("silverValue").value) * 10;
+    var silverValue = subMoney(value);
+}
+
+function subGold() {
+    var value = parseInt(document.getElementById("goldValue").value) * 100;
+    var goldValue = subMoney(value);
+}
+
+function subPlatinum() {
+    var value = parseInt(document.getElementById("platinumValue").value) * 1000;
+    var platinumValue = subMoney(value);
+}
+
+
+function subMoney(value) {
+    var digits = [];
+    while (value > 0) {
+        digits[digits.length] = value % 10;
+        value = parseInt(value / 10);
+    }
+    for (var i = 0; i <= 2; i++) {
+        moneyInventory[i] -= ifIsNaN(digits[i]);
+    }
+    for (i = 3; i < digits.length; i++) {
+        var multipler = Math.pow(10, (i - 3))
+        moneyInventory[3] -= digits[i] * multipler;
+    }
+    downChainInventory(value);
+    updateMoneyInventories();
+}
+// Needs work here!===============================================
+function downChainInventory(value) {
+    for (var i = 0; i < 3; i++) {
+        if (moneyInventory[i] > 0) {
+            moneyInventory[i - 1] += 10 * value;
+        } 
+    }
+
+}
+/*-----Money Section END---*/
+
 
 /* ---- Everything on load starts here. ----*/
 $(document).ready(function () {
     charStats();
     levels();
+    ajax();
+    initMoney()
 });
 

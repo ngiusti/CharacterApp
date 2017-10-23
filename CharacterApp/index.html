@@ -21,8 +21,19 @@
                         <div class="p-5 bg-dark text-white title-curve">
                             <div class="name justify-content-between align-items-center ">
                                 <div class=" flex-row d-flex">
-                                    <h1 class="display-4 top1">Dwarf Name</h1>
-                                    <div class="hp">HP: 52/52</div>
+                                    <div>
+                                        <h1 class="display-4 top1">Dwarf Name</h1>
+                                        <h3>Aka "Padre"</h3>
+                                    </div>
+                                    <div >
+                                        <div class="hp" id="health">HP: 52/52</div>
+                                        <div class="hpSpace">
+                                            <button class="hpBtns" id="hpUp"> + </button>
+                                            <button class="hpBtns" id="hpDown"> - </button>
+                                        </div>
+                                    </div>
+
+                                    
                                 </div>
 
                                 <div class="topSpan flex-row d-flex top2">
@@ -112,10 +123,20 @@
                     <p class="col-4"></p>
                     <p id="attribute" class="col-4 text-center display-box">Roll</p>
                 </div>
-                <h2 class="text-center">Skill Points</h2>
                 <div class="row">
-                    <p class="col-4"></p>
-                    <p id="skillPoints" class="col-4 text-center display-box">Skill Points</p>
+
+                    <div class="col-5">
+                        <h2 class="text-center">Feat Points</h2>
+                        <p id="featPoints" class=" text-center display-box">Feat Points</p>
+                    </div>
+                    <div class="col-2 text-center">
+
+                        <button class="exp-button tranBtn" id="featTrans"><i class="fa fa-angle-double-right fa-2x p-1"></i></button>
+                    </div>
+                    <div class="col-5">
+                        <h2 class="text-center">Skill Points</h2>
+                        <p id="skillPoints" class=" text-center display-box">Skill Points</p>
+                    </div>
                 </div>
                 <div class="card-deck ">
                     <div class="card bg-inpage mt-2">
@@ -128,7 +149,7 @@
                                 <div class="throws" id="str-throw">
                                     +1
                                 </div>
-                                <button class="exp-button" id="strSP"><i class="fa fa-cog fa-spin"></i></button>
+                                <button class="exp-button skillBtn" id="strSP"><i class="fa fa-cog fa-spin"></i></button>
                             </div>
                             <h3 class="minor-titles">Skills Affected</h3>
                             <ul>
@@ -147,6 +168,7 @@
                                 <div class="throws" id="dex-throw">
                                     +1
                                 </div>
+                                <button class="exp-button skillBtn" id="dexSP"><i class="fa fa-cog fa-spin"></i></button>
                             </div>
                             <h3 class="minor-titles">Skills Affected</h3>
                             <ul>
@@ -167,6 +189,7 @@
                                 <div class="throws" id="cons-throw">
                                     +1
                                 </div>
+                                <button class="exp-button skillBtn" id="consSP"><i class="fa fa-cog fa-spin"></i></button>
                             </div>
                             <h3 class="minor-titles">Skills Affected</h3>
                             <ul>
@@ -187,6 +210,7 @@
                                 <div class="throws" id="int-throw">
                                     +1
                                 </div>
+                                <button class="exp-button skillBtn" id="intSP"><i class="fa fa-cog fa-spin"></i></button>
                             </div>
                             <h3 class="minor-titles">Skills Affected</h3>
                             <ul>
@@ -209,6 +233,7 @@
                                 <div class="throws" id="wis-throw">
                                     +1
                                 </div>
+                                <button class="exp-button skillBtn" id="wisSP"><i class="fa fa-cog fa-spin"></i></button>
                             </div>
                             <h3 class="minor-titles">Skills Affected</h3>
                             <ul>
@@ -231,6 +256,7 @@
                                 <div class="throws" id="char-throw">
                                     
                                 </div>
+                                <button class="exp-button skillBtn" id="charSP"><i class="fa fa-cog fa-spin"></i></button>
                             </div>
                             <h3 class="minor-titles">Skills Affected</h3>
                             <ul>
@@ -285,36 +311,27 @@
                                 <h3 class="minor-titles" data-toggle="collapse" data-target="#spells">Cleric Spells</h3>
                                 <div id="spells" class="collapse">
                                     <div>
-                                        <h4 class="minor-titles" data-toggle="collapse" data-target="#cantrips">Cantrips</h4>
-                                        <ul id="cantrips" class="collapse">
-                                            <li><strong>Light (Range Touch )</strong> <p>You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet.</p></li>
-                                            <li><strong>Mending (Range Touch )</strong> <p>This spell repairs a single break or tear in an object you touch.</p></li>
-                                            <li><strong>Sacred Flame (Range 60ft)</strong> <p>Flame-like radiance descends on a creature that you can see within range. The target must succeed on a Dexterity saving throw or take 1d8 radiant damage. </p></li>
-                                            <li><strong>Spare the Dying (Range Touch )</strong> <p>You touch a living creature that has 0 hit points. The creature becomes stable. This spell has no effect on undead or constructs.</p></li>
-                                        </ul>
+                                        <h4 class="minor-titles" data-toggle="collapse" data-target="#spell0">Cantrips</h4>
+                                        <ul id="spell0" class="collapse"></ul>
                                         <h4 class="minor-titles" data-toggle="collapse" data-target="#spell1">Level 1</h4>
-                                        <ul id="spell1" class="collapse">
-                                            <li><strong>Cure Wounds(Range Touch )</strong> <p>A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. </p></li>
-                                            <li><strong>Healing Word (Range 60ft )</strong> <p>A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs.</p></li>
-                                            <li><strong>Inflict Wounds (Range Touch )</strong> <p>Make a melee spell attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage.</p></li>
-                                            <li>
-                                                <strong>Protection from Evil and Good (Range Touch )</strong> <p>
-                                                    Until the spell ends, one willing creature you touch is protected against certain types of creatures: aberrations, celestials, elementals, fey, fiends, and undead.
-                                                    The protection grants several benefits. Creatures of those types have disadvantage on attack rolls against the target. The target also can't be charmed, frightened, or possessed by them. If the target is already charmed, frightened, or possessed by such a creature, the target has advantage on any new saving throw against the relevant effect.
-                                                </p>
-                                            </li>
-                                        </ul>
+                                        <ul id="spell1" class="collapse"></ul>
                                         <h4 class="minor-titles" data-toggle="collapse" data-target="#spell2">Level 2</h4>
-                                        <ul id="spell2" class="collapse">
-                                            <li><strong>Lesser Restoration (Range Touch )</strong> <p>You touch a creature and can end either one disease or one condition afflicting it. The condition can be blinded, deafened, paralyzed, or poisoned.</p></li>
-                                            <li><strong>Prayer of Healing (Range Touch )</strong> <p>Up to six creatures of your choice that you can see within range each regain hit points equal to 2d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs.</p></li>
-                                            <li><strong>Spiritual Weapon (Range Touch )</strong> <p>You create a floating, spectral weapon within range that lasts for the duration or until you cast this spell again. When you cast the spell, you can make a melee spell attack against a creature within 5 feet of the weapon. On a hit, the target takes force damage equal to 1d8 + your spellcasting ability modifier. </p></li>
-                                        </ul>
+                                        <ul id="spell2" class="collapse"></ul>
                                         <h4 class="minor-titles" data-toggle="collapse" data-target="#spell3">Level 3</h4>
-                                        <ul id="spell3" class="collapse">
-                                            <li><strong>Animate Dead (Range 10 ft)</strong> <p>This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature. The target becomes a skeleton if you chose bones or a zombie if you chose a corpse (the GM has the creature's game statistics). </p></li>
-                                            <li><strong>Speak with Dead (Range 10 ft )</strong> <p>You grant the semblance of life and intelligence to a corpse of your choice within range, allowing it to answer the questions you pose. The corpse must still have a mouth and can't be undead. The spell fails if the corpse was the target of this spell within the last 10 days. </p></li>
-                                        </ul>
+                                        <ul id="spell3" class="collapse"></ul>
+                                        <h4 class="minor-titles" data-toggle="collapse" data-target="#spell4">Level 4</h4>
+                                        <ul id="spell4" class="collapse"></ul>
+                                        <h4 class="minor-titles" data-toggle="collapse" data-target="#spell5">Level 5</h4>
+                                        <ul id="spell5" class="collapse"></ul>
+                                        <h4 class="minor-titles" data-toggle="collapse" data-target="#spell6">Level 6</h4>
+                                        <ul id="spell6" class="collapse"></ul>
+                                        <h4 class="minor-titles" data-toggle="collapse" data-target="#spell7">Level 7</h4>
+                                        <ul id="spell7" class="collapse"></ul>
+                                        <h4 class="minor-titles" data-toggle="collapse" data-target="#spell8">Level 8</h4>
+                                        <ul id="spell8" class="collapse"></ul>
+                                        <h4 class="minor-titles" data-toggle="collapse" data-target="#spell9">Level 9</h4>
+                                        <ul id="spell9" class="collapse"></ul>
+                                    
                                     </div>
                                 </div>
                                 
@@ -355,9 +372,86 @@
                 <h2>Gear</h2>
                 <p>What is weighing down your pockets?</p>
             </div>
-            <div class="card card-body py-5 section-container bg-offwhite">
-              
+            <div class="card card-body py-5 section-container  bg-page">
+                <div class="card-deck ">
+                    <div class="card bg-inpage mt-2 ">
+                        <div class="card-body ">
+                            <div class="blockTitles">
+                                <h3 class="card-title minor-titles"> Currency</h3>
+                            </div>
+                            <div class="card-text ">
+                                <div class="form-inline">
+                                    <h3 class="card-title">Copper:</h3>
+                                    <h3 id="copper" class="card-title pl-3">0</h3>
+                                </div>
+                                <div class="form-inline">
+                                    <i class="fa fa-stop-circle fa-2x d-block p-2 pt-0 copper"></i>
+                                    <input type="number" id="copperValue" class="moneyTextBox"/>
+                                    <button  onclick="addCopper()">+</button>
+                                    <button onclick="subCopper()">-</button>
+                                </div>
+                                <div class="form-inline">
+                                    <h3 class="card-title">Silver:</h3>
+                                    <h3 id="silver" class="card-title pl-3">0</h3>
+                                </div>
+                                <div class="form-inline">
+                                    <i class="fa fa-stop-circle fa-2x d-block p-2 silver"></i>
+                                    <input type="number" id="silverValue" class="moneyTextBox" />
+                                    <button onclick="addSilver()">+</button>
+                                    <button onclick="subSilver()">-</button>
+                                </div>
+                                <div class="form-inline">
+                                    <h3 class="card-title">Gold:</h3>
+                                    <h3 id="gold" class="card-title pl-3">0</h3>
+                                </div>
+                                <div class="form-inline">
+                                    <i class="fa fa-stop-circle fa-2x d-block p-2 gold"></i>
+                                    <input type="number" id="goldValue" class="moneyTextBox" />
+                                    <button onclick="addGold()">+</button>
+                                    <button onclick="subGold()">-</button>
+                                </div>
+                                <div class="form-inline">
+                                    <h3 class="card-title">Platinum:</h3>
+                                    <h3 id="platinum" class="card-title pl-3">0</h3>
+                                </div>
+                                <div class="form-inline">
+                                    <i class="fa fa-stop-circle fa-2x d-block p-2 platinum"></i>
+                                    <input type="number" id="platinumValue" class="moneyTextBox" />
+                                    <button onclick="addPlatinum()">+</button>
+                                    <button onclick="subPlatinum()">-</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card bg-inpage mt-2 ">
+                        <div class="card-body ">
+                            <div class="blockTitles">
+                                <h3 class="card-title minor-titles"> Supplies</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck ">
+                    <div class="card bg-inpage mt-2 ">
+                        <div class="card-body ">
+                            <div class="blockTitles">
+                                <h3 class="card-title minor-titles"> Armor</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-inpage mt-2 ">
+                        <div class="card-body ">
+                            <div class="blockTitles">
+                                <h3 class="card-title minor-titles"> Weapon</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+
         </section>
 
         <section id="backStory" class="collapse">
@@ -419,9 +513,12 @@
                 </div>
             </div>
         </footer>
+        <div id="thing">
+
+        </div>
     </div>
 
-
+    <script src="js/ajax.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -429,3 +526,5 @@
 
 </body>
 </html>
+
+

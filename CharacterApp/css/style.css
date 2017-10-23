@@ -1,18 +1,17 @@
 body {
     background-color: #d0d0d0;
-    /* Full height */
-    height: 100%;
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     font-family: 'Almendra SC', serif;
 }
 
-.hp{
-    padding-top:7px;
-    padding-left:20px;
-    font-size:40px;
+.tranBtn {
+    margin-top:40px;
+    margin-left: -7%;
+}
+
+.hp {
+    padding-top: 7px;
+    padding-left: 20px;
+    font-size: 40px;
 }
 
 h2 {
@@ -28,11 +27,13 @@ h2 {
   color: #fff; }
 
 .bg-page {
-    background-color:#F8ECC2;
+    box-shadow: inset 0 0 0 1000px rgba(248,236,194,.6);
+    background-image: url('../img/paperTexture.jpg');
 }
 
 .bg-inpage {
-    background-color: #eadba4;
+    box-shadow: inset 0 0 0 1000px rgba(234,219,164,.6);
+    background-image: url('../img/paperTexture.jpg');
 }
 
 #main-header img {
@@ -78,18 +79,24 @@ h2 {
         background-color: #8d0000;
     }
 
+.skillBtn {
+    border-radius:50%;
+    margin-left:10px;
+}
+
 .trait-tab,
 .skills-tab,
-.inventory-tab ,
+.inventory-tab,
 .BS-tab {
-    background-color: #F8ECC2;
+    box-shadow: inset 0 0 0 1000px rgba(248,236,194,.6);
+    background-image: url('../img/paperTexture.jpg');
     color: #292c2e;
-    border: 2px solid #f5e5ab;
+    border: 2px solid #b4ad93;
     border-top-right-radius: 2em;
 }
 
 .tab-bg {
-    background-color: #f3de94;
+    background-color: #b4ad93;
 }
 
 
@@ -148,6 +155,11 @@ div.dice-button {
             color: #000;
             font-size:.75em;
         }
+
+    .tranBtn {
+        margin-top: 70px;
+        margin-left: -7%;
+    }
 
 }
 
@@ -238,6 +250,8 @@ li{
 }
 
 .blockTitles {
+    box-shadow: inset 0 0 0 1000px rgba(209,196,146,.8);
+    background-image: url('../img/paperTexture.jpg');
     background-color: #d1c492;
     text-align: center;
     padding-top: 10px;
@@ -245,4 +259,52 @@ li{
     border-bottom: 2px solid #928760;
 }
 
+.hpBtns {
+    padding:0 10%;
+    background-color: #373030;
+    color: #c8c8c8;
+    border-radius:50%;
+    margin:5%;
+    align-content:flex-end;
+}
 
+.hpSpace{
+    margin-left: 30%;
+}
+
+.copper {
+    color: #b87333;
+    border-radius: 50%;
+    border: 2px solid #b87333;
+    margin-right: 10px;
+    background-color: #7c4e22;
+}
+
+.silver {
+    color: #c0c0c0;
+    border-radius: 50%;
+    border: 2px solid #c0c0c0;
+    margin-right: 10px;
+    background-color: #9a9a9a;
+}
+
+.gold {
+    color: #ffd700;
+    border-radius: 50%;
+    border: 2px solid #ffd700;
+    margin-right: 10px;
+    background-color: #b29600;
+}
+
+.platinum {
+    color: #E5E4E2;
+    border-radius: 50%;
+    border: 2px solid #E5E4E2;
+    margin-right: 10px;
+    background-color: #A0AABF;
+}
+
+.moneyTextBox {
+    background: transparent;
+    border: 2px solid #292c2e;
+}

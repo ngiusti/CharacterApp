@@ -93,8 +93,10 @@
     <Content Include="img\dice\D4.png" />
     <Content Include="img\dice\D6.png" />
     <Content Include="img\dice\D8.png" />
+    <Content Include="img\paperTexture.jpg" />
     <Content Include="img\woodenBackground.png" />
     <Content Include="index.html" />
+    <Content Include="js\ajax.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\popper.min.js" />
