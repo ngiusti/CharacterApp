@@ -82,9 +82,42 @@
         </header>
         <section id="traits" class="collapse show ">
             <div class="card card-body bg-page py-5 box-shadow text-center">
-                <h2>Traits</h2>
-                <p class="lead">These are your secrete abilities. What skills do you possess</p>
+                <h2>Characteristics</h2>
+                <p class="lead"></p>
                 <div class="card-deck">
+                    <div class="card bg-inpage mt-2">
+                        
+                        <div class="card-body ">
+                            <h3 class=" blockTitles card-title minor-titles pb-2">Physical</h3>
+                            <div class="pt-2">
+                                <ul>
+                                    <li id="height" class="characteristics"></li>
+                                    <li id="weight" class="characteristics"></li>
+                                    <li id="sex" class="characteristics"></li>
+                                    <li id="age" class="characteristics"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-inpage mt-2">
+                        <div class="card-body ">
+                            <h3 class=" blockTitles card-title minor-titles pb-2">Mental</h3>
+                            <div class="pt-2">
+                                <ul>
+                                    <li class="characteristics" id="mental"></li>
+                                    <li class="characteristics" id="physical"></li>
+                                    <li class="characteristics" id="social"></li>
+                                    <li class="characteristics" id="lifestyle"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-body py-5 section-container bg-offwhite bg-page">
+                <h2 class="text-center">Traits</h2>
+                <p class="lead text-center">These are your secrete abilities. What skills do you possess</p>
+                <div class="card-deck mb-5">
                     <div class="card bg-inpage mt-2">
                         <div class="card-body ">
                             <div class="flex-row d-flex ">
@@ -108,16 +141,14 @@
                     <div class="card bg-inpage mt-2">
                         <button class="card-body bg-inpage" id="inti-btn">
                             <div class="flex-row d-flex ">
-                                <i class="fa fa-thumbs-o-up fa-2x d-block pr-2"></i><h3 class="card-title" > Intiative-</h3>
-                                <div class="ability"id="inti-base">
+                                <i class="fa fa-thumbs-o-up fa-2x d-block pr-2"></i><h3 class="card-title"> Intiative-</h3>
+                                <div class="ability" id="inti-base">
                                     12
                                 </div>
                             </div>
                         </button>
                     </div>
                 </div>
-            </div>
-            <div class="card card-body py-5 section-container bg-offwhite bg-page">
                 <h2 class="text-center">Attributes</h2>
                 <div class="row">
                     <p class="col-4"></p>
@@ -387,8 +418,8 @@
                                 <div class="form-inline">
                                     <i class="fa fa-stop-circle fa-2x d-block p-2 pt-0 copper"></i>
                                     <input type="number" id="copperValue" class="moneyTextBox"/>
-                                    <button  onclick="addCopper()">+</button>
-                                    <button onclick="subCopper()">-</button>
+                                    <button  onclick="addCopper()" class="exp-button">+</button>
+                                    <button onclick="subCopper()" class="exp-button pl-2 pr-2">-</button>
                                 </div>
                                 <div class="form-inline">
                                     <h3 class="card-title">Silver:</h3>
@@ -397,8 +428,8 @@
                                 <div class="form-inline">
                                     <i class="fa fa-stop-circle fa-2x d-block p-2 silver"></i>
                                     <input type="number" id="silverValue" class="moneyTextBox" />
-                                    <button onclick="addSilver()">+</button>
-                                    <button onclick="subSilver()">-</button>
+                                    <button onclick="addSilver()" class="exp-button">+</button>
+                                    <button onclick="subSilver()" class="exp-button pl-2 pr-2">-</button>
                                 </div>
                                 <div class="form-inline">
                                     <h3 class="card-title">Gold:</h3>
@@ -407,8 +438,8 @@
                                 <div class="form-inline">
                                     <i class="fa fa-stop-circle fa-2x d-block p-2 gold"></i>
                                     <input type="number" id="goldValue" class="moneyTextBox" />
-                                    <button onclick="addGold()">+</button>
-                                    <button onclick="subGold()">-</button>
+                                    <button onclick="addGold()" class="exp-button">+</button>
+                                    <button onclick="subGold()" class="exp-button pl-2 pr-2">-</button>
                                 </div>
                                 <div class="form-inline">
                                     <h3 class="card-title">Platinum:</h3>
@@ -417,8 +448,8 @@
                                 <div class="form-inline">
                                     <i class="fa fa-stop-circle fa-2x d-block p-2 platinum"></i>
                                     <input type="number" id="platinumValue" class="moneyTextBox" />
-                                    <button onclick="addPlatinum()">+</button>
-                                    <button onclick="subPlatinum()">-</button>
+                                    <button onclick="addPlatinum()" class="exp-button"> + </button>
+                                    <button onclick="subPlatinum()" class="exp-button pl-2 pr-2"> - </button>
                                 </div>
                             </div>
                         </div>

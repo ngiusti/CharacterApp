@@ -21,8 +21,17 @@ var copperInventory = 0;
 var silverInventory = 0;
 var goldInventory = 0;
 var platinumInventory = 0;
-var moneyInventory = [copperInventory, silverInventory, goldInventory, platinumInventory]
+var moneyInventory = [copperInventory, silverInventory, goldInventory, platinumInventory];
 var moneyHolder = 0;
+var height = "4ft 3in";
+var weight = "240lbs";
+var sex = "Male";
+var age = 122;
+var cognative = "Bookworm";
+var corporeal = "Clumsy";
+var social = "Charismatic";
+var lifestyle = "Kleptomaniac";
+
 /*---Character Stats---*/
 
 /*---connection to other script files---*/
@@ -81,6 +90,21 @@ function d4() {
 }
 
 
+/*--------Characteristics-------*/
+function characteristics() {
+    document.getElementById("height").innerHTML = "<strong>Height: </strong>" + height;
+    document.getElementById("weight").innerHTML = "<strong>Weight: </strong>" + weight;
+    document.getElementById("age").innerHTML = "<strong>Age: </strong>" + age;
+    document.getElementById("sex").innerHTML = "<strong>Sex: </strong>" + sex;
+    document.getElementById("mental").innerHTML = "<strong>Cognative: </strong>" + cognative;
+    document.getElementById("physical").innerHTML = "<strong>Corporeal: </strong>" + corporeal;
+    document.getElementById("social").innerHTML = "<strong>Social: </strong>" + social;
+    document.getElementById("lifestyle").innerHTML = "<strong>Lifestyle: </strong>" + lifestyle;
+
+}
+
+
+/*--------Characteristics end-------*/
 
 /*-----Button Rolls Start----------------*/
 
@@ -373,8 +397,8 @@ function disableBtn(){
 
 function initMoney() {
     document.getElementById("copper").innerHTML = moneyInventory[0];
-    document.getElementById("silver").innerHTML = moneyInventory[1]
-    document.getElementById("gold").innerHTML = moneyInventory[2]
+    document.getElementById("silver").innerHTML = moneyInventory[1];
+    document.getElementById("gold").innerHTML = moneyInventory[2];
     document.getElementById("platinum").innerHTML = moneyInventory[3];
 
 }
@@ -404,7 +428,7 @@ function addMoney(value) {
         moneyInventory[i] += ifIsNaN(digits[i]);
     }
     for ( i = 3; i < digits.length; i++) {
-        var multipler = Math.pow(10,(i-3))
+        var multipler = Math.pow(10, i - 3);
         moneyInventory[3] += digits[i] * multipler;
     }
     upChainInventory();
@@ -471,7 +495,7 @@ function subMoney(value) {
         moneyInventory[i] -= ifIsNaN(digits[i]);
     }
     for (i = 3; i < digits.length; i++) {
-        var multipler = Math.pow(10, (i - 3))
+        var multipler = Math.pow(10, i - 3);
         moneyInventory[3] -= digits[i] * multipler;
     }
     downChainInventory(value);
@@ -494,6 +518,7 @@ $(document).ready(function () {
     charStats();
     levels();
     ajax();
-    initMoney()
+    initMoney();
+    characteristics();
 });
 

@@ -3,8 +3,13 @@ body {
     font-family: 'Almendra SC', serif;
 }
 
+.characteristics {
+    font-size: 28px;
+    list-style-type: none;
+    margin-left: -50px;
+}
 .tranBtn {
-    margin-top:40px;
+    margin-top: 40px;
     margin-left: -7%;
 }
 
