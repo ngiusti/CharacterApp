@@ -1,0 +1,315 @@
+body {
+    background-color: #d0d0d0;
+    font-family: 'Almendra SC', serif;
+}
+
+.characteristics {
+    font-size: 28px;
+    list-style-type: none;
+    margin-left: -50px;
+}
+.tranBtn {
+    margin-top: 40px;
+    margin-left: -7%;
+}
+
+.hp {
+    padding-top: 7px;
+    padding-left: 20px;
+    font-size: 40px;
+}
+
+h2 {
+    text-decoration: solid underline;
+}
+
+.Bstory {
+    font-family: 'Kaushan Script', cursive;
+}
+
+.bg-black {
+  background: #0e0e0e;
+  color: #fff; }
+
+.bg-page {
+    box-shadow: inset 0 0 0 1000px rgba(248,236,194,.6);
+    background-image: url('/Images/paperTexture.jpg');
+}
+
+.bg-inpage {
+    box-shadow: inset 0 0 0 1000px rgba(234,219,164,.6);
+    background-image: url('/Images/paperTexture.jpg');
+}
+
+#main-header Images {
+    width: 100%;
+    height: 100%;
+}
+     
+#main-header .port-item {
+  width: 30%; }
+  #main-header .port-item .fa {
+    font-size: 2em; }
+
+#main-header .port-item:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+
+.title strong{
+    color: #8d0000;
+    font-size:30px;
+    padding-left:10px;  
+}
+
+
+.exp-button {
+    border-radius: 2em;
+    padding: 0.4em;
+    outline: none;
+    color:#fff;
+    background-color:#4d4d4d;
+
+}
+
+    .exp-button:hover {
+        opacity: 0.8;
+        cursor: pointer;
+        color: #c8c8c8;
+        background-color: #2a2a2a;
+    }
+
+    .exp-button:disabled {
+        background-color: #8d0000;
+    }
+
+.skillBtn {
+    border-radius:50%;
+    margin-left:10px;
+}
+
+.trait-tab,
+.skills-tab,
+.inventory-tab,
+.BS-tab {
+    box-shadow: inset 0 0 0 1000px rgba(248,236,194,.6);
+    background-image: url('/Images/paperTexture.jpg');
+    color: #292c2e;
+    border: 2px solid #b4ad93;
+    border-top-right-radius: 2em;
+}
+
+.tab-bg {
+    background-color: #b4ad93;
+}
+
+
+
+.container-border {
+    border: 10px solid #292b2d;
+    border-radius: 2em;
+    background-color: #292b2d;
+    padding:1em;
+}
+
+div.dice-button {
+    margin: 30px;
+    opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+
+}
+
+    div.dice-button p {
+        margin: 5%;
+        font-weight: bold;
+        color: #000;
+        font-size: 1.2em;
+    }
+
+@media screen and (max-width: 420px) {
+
+    .container-border {
+        border: 1em solid #292b2d;
+        border-radius: 2em;
+        background-color: #292b2d;
+        padding: 0.2em;
+    }
+
+    #main-header .port-item {
+        width: 25%;
+    }
+
+        #main-header .port-item .fa {
+            font-size: 1em;
+        }
+
+    body {
+        background-color:#f5e5ab;
+        overflow:no-display;
+    }
+
+    div.dice-button {
+        margin: 20px;
+        opacity: 0.9;
+        filter: alpha(opacity=90); /* For IE8 and earlier */
+    }
+
+        div.dice-button p {
+            font-weight: bold;
+            color: #000;
+            font-size:.75em;
+        }
+
+    .tranBtn {
+        margin-top: 70px;
+        margin-left: -7%;
+    }
+
+}
+
+.charPicture {
+    border: 5px solid #292b2d;
+
+}
+
+@media screen and (min-width: 568px) {
+    
+    .dice-Images{
+        margin-left:25%;
+    }
+
+}
+
+@media screen and (min-width: 768px){
+    .exp-btn-block {
+        margin-left: 20%;
+    }
+}
+
+.dice-Images:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.dice-Images {
+    border: 2px solid #343a40;
+    background-size: contain !important;
+    
+}
+
+
+#d20, .attributes{
+    background: url(/Images/dice/D20.png) no-repeat center;
+}
+
+#d12 {
+    background: url(/Images/dice/D12.png) no-repeat center;
+}
+    
+#d10 {
+    background: url(/Images/dice/D10.png) no-repeat center;
+}
+
+#d8 {
+    background: url(/Images/dice/D8.png) no-repeat center;
+}
+
+#d6 {
+    background: url(/Images/dice/D6.png) no-repeat center;
+}
+
+#d4 {
+    background: url(/Images/dice/D4.png) no-repeat center;
+}
+
+.ability{
+    font-size:20px;
+    border:3px dashed #292b2d;
+    border-radius:50%;
+    margin-left:7px;
+    padding: 2px 10px;
+    
+}
+
+.throws {
+    
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+li{
+    font-size:20px;
+}
+
+.display-box{
+    background-color:#fff;
+    color:#000;
+    font-size:30px;
+    border: 5px solid #292c2e;
+}
+
+.minor-titles{
+    font-style:italic;
+    font-weight:bold;
+}
+
+.blockTitles {
+    box-shadow: inset 0 0 0 1000px rgba(209,196,146,.8);
+    background-image: url('/Images/paperTexture.jpg');
+    background-color: #d1c492;
+    text-align: center;
+    padding-top: 10px;
+    margin: -20px -20px 0 -20px;
+    border-bottom: 2px solid #928760;
+}
+
+.hpBtns {
+    padding:0 10%;
+    background-color: #373030;
+    color: #c8c8c8;
+    border-radius:50%;
+    margin:5%;
+    align-content:flex-end;
+}
+
+.hpSpace{
+    margin-left: 30%;
+}
+
+.copper {
+    color: #b87333;
+    border-radius: 50%;
+    border: 2px solid #b87333;
+    margin-right: 10px;
+    background-color: #7c4e22;
+}
+
+.silver {
+    color: #c0c0c0;
+    border-radius: 50%;
+    border: 2px solid #c0c0c0;
+    margin-right: 10px;
+    background-color: #9a9a9a;
+}
+
+.gold {
+    color: #ffd700;
+    border-radius: 50%;
+    border: 2px solid #ffd700;
+    margin-right: 10px;
+    background-color: #b29600;
+}
+
+.platinum {
+    color: #E5E4E2;
+    border-radius: 50%;
+    border: 2px solid #E5E4E2;
+    margin-right: 10px;
+    background-color: #A0AABF;
+}
+
+.moneyTextBox {
+    background: transparent;
+    border: 2px solid #292c2e;
+}
