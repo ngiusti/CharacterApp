@@ -1,0 +1,559 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Character Page</title>
+
+    @Styles.Render("~/styleBundles/Character")
+    <link href="https://fonts.googleapis.com/css?family=Almendra+SC|Kaushan+Script|Metal+Mania" rel="stylesheet">
+</head>
+<body>  
+<div class="container container-border">
+<header id="main-header">
+    <div class="row no-gutters">
+        <div class="col-lg-4 col-md-5 charPicture">
+            <img src="/Images/cleric2.png" style="height: 100%; width: 100%;"/>
+        </div>
+        <div class="col-lg-8 col-md-7">
+            <div class="d-flex flex-column">
+                <div class="p-5 bg-dark text-white title-curve">
+                    <div class="name justify-content-between align-items-center ">
+                        <div class=" flex-row d-flex">
+                            <div>
+                                <h1 class="display-4 top1">Dwarf Name</h1>
+                                <h3>Aka "Padre"</h3>
+                            </div>
+                            <div >
+                                <div class="hp" id="health">HP: 52/52</div>
+                                <div class="hpSpace">
+                                    <button class="hpBtns" id="hpUp"> + </button>
+                                    <button class="hpBtns" id="hpDown"> - </button>
+                                </div>
+                            </div>
+
+                                    
+                        </div>
+
+                        <div class="topSpan flex-row d-flex top2">
+                            <div class="charClass p-2">Class: Cleric</div>
+                            <div class="charRace p-2">Race: Dwarf</div>
+                            <div class="charLvl p-2" id="charLevel">lvl</div>
+                            <div class="charAlignment p-2">Chaotic Evil</div>
+                        </div>
+                        <div class=" flex-row d-flex">
+                            <div id="experience"></div>
+                        </div>
+                        <div class="progress mb-3">
+                            <div class="progress-bar bg-success" style="width:50%" id="lvl-percent">100%</div>
+                        </div>
+                        <div class="exp-btn-block">
+                            <button class="exp-button" id="btn-50">+50</button>
+                            <button class="exp-button" id="btn-100">+100</button>
+                            <button class="exp-button" id="btn-500">+500</button>
+                            <button class="exp-button" id="btn-1000">+1000</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 bg-black">
+                    <div class="title">Of the <strong>Pollos Diablos</strong></div>
+                </div>
+                <div class="tab-bg">
+                    <div class="d-flex text-white align-items-stretch text-center">
+                        <div class="port-item p-4 trait-tab" data-toggle="collapse" data-target="#traits">
+                            <i class="fa fa-sun-o fa-spin d-block"></i>Traits
+                        </div>
+                        <div class="port-item p-4 skills-tab" data-toggle="collapse" data-target="#skills">
+                            <i class="fa fa-superpowers fa-spin d-block"></i>Skills
+                        </div>
+                        <div class="port-item p-4 inventory-tab" data-toggle="collapse" data-target="#gear">
+                            <i class="fa fa-suitcase  d-block"></i>Gear
+                        </div>
+                        <div class="port-item p-4 BS-tab" data-toggle="collapse" data-target="#backStory">
+                            <i class="fa fa-comments  d-block"></i>Back Story
+                        </div>
+                                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section id="traits" class="collapse show ">
+<div class="card card-body bg-page py-5 box-shadow text-center">
+    <h2>Characteristics</h2>
+    <p class="lead"></p>
+    <div class="card-deck">
+        <div class="card bg-inpage mt-2">
+                        
+            <div class="card-body ">
+                <h3 class=" blockTitles card-title minor-titles pb-2">Physical</h3>
+                <div class="pt-2">
+                    <ul>
+                        <li id="height" class="characteristics"></li>
+                        <li id="weight" class="characteristics"></li>
+                        <li id="sex" class="characteristics"></li>
+                        <li id="age" class="characteristics"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-inpage mt-2">
+            <div class="card-body ">
+                <h3 class=" blockTitles card-title minor-titles pb-2">Mental</h3>
+                <div class="pt-2">
+                    <ul>
+                        <li class="characteristics" id="mental"></li>
+                        <li class="characteristics" id="physical"></li>
+                        <li class="characteristics" id="social"></li>
+                        <li class="characteristics" id="lifestyle"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card card-body py-5 section-container bg-offwhite bg-page">
+    <h2 class="text-center">Traits</h2>
+    <p class="lead text-center">These are your secrete abilities. What skills do you possess</p>
+    <div class="card-deck mb-5">
+        <div class="card bg-inpage mt-2">
+            <div class="card-body ">
+                <div class="flex-row d-flex ">
+                    <i class="fa fa-shield fa-2x d-block pr-2"></i><h3 class="card-title"> Armor-</h3>
+                    <div class="ability" id="arm-base">
+                        12
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-inpage mt-2">
+            <div class="card-body">
+                <div class="flex-row d-flex ">
+                    <i class="fa fa-angle-double-right fa-2x d-block pr-2"></i><h3 class="card-title"> Speed-</h3>
+                    <div class="ability" id="speed-base">
+                        12
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-inpage mt-2">
+            <button class="card-body bg-inpage" id="inti-btn">
+                <div class="flex-row d-flex ">
+                    <i class="fa fa-thumbs-o-up fa-2x d-block pr-2"></i><h3 class="card-title"> Intiative-</h3>
+                    <div class="ability" id="inti-base">
+                        12
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+    <h2 class="text-center">Attributes</h2>
+    <div class="row">
+        <p class="col-4"></p>
+        <p id="attribute" class="col-4 text-center display-box">Roll</p>
+    </div>
+    <div class="row">
+
+        <div class="col-5">
+            <h2 class="text-center">Feat Points</h2>
+            <p id="featPoints" class=" text-center display-box">Feat Points</p>
+        </div>
+        <div class="col-2 text-center">
+
+            <button class="exp-button tranBtn" id="featTrans"><i class="fa fa-angle-double-right fa-2x p-1"></i></button>
+        </div>
+        <div class="col-5">
+            <h2 class="text-center">Skill Points</h2>
+            <p id="skillPoints" class=" text-center display-box">Skill Points</p>
+        </div>
+    </div>
+    <div class="card-deck ">
+        <div class="card bg-inpage mt-2">
+            <div class="card-body">
+                <div class="flex-row d-flex ">
+                    <h3 class="card-title minor-titles"> Strength-</h3>
+                    <div class="ability" id="str-base">
+                        12
+                    </div>
+                    <div class="throws" id="str-throw">
+                        +1
+                    </div>
+                    <button class="exp-button skillBtn" id="strSP"><i class="fa fa-cog fa-spin"></i></button>
+                </div>
+                <h3 class="minor-titles">Skills Affected</h3>
+                <ul>
+                    <li > -Athletics </li>
+                </ul>
+                <button class="col-12 text-center exp-button"  id="str-btn" >Roll</button>
+            </div>
+        </div>
+        <div class="card bg-inpage mt-2">
+            <div class="card-body">
+                <div class="flex-row d-flex ">
+                    <h3 class="card-title minor-titles"> Dexterity-</h3>
+                    <div class="ability" id="dex-base">
+                        12
+                    </div>
+                    <div class="throws" id="dex-throw">
+                        +1
+                    </div>
+                    <button class="exp-button skillBtn" id="dexSP"><i class="fa fa-cog fa-spin"></i></button>
+                </div>
+                <h3 class="minor-titles">Skills Affected</h3>
+                <ul>
+                    <li> -Acrobatics </li>
+                    <li> -Sleight of Hand </li>
+                    <li> -Stealth </li>
+                </ul>
+                <button class="col-12 text-center exp-button" id="dex-btn">Roll</button>
+            </div>
+        </div>
+        <div class="card bg-inpage mt-2">
+            <div class="card-body">
+                <div class="flex-row d-flex ">
+                    <h3 class="card-title minor-titles"> Constitution-</h3>
+                    <div class="ability" id="cons-base">
+                        12
+                    </div>
+                    <div class="throws" id="cons-throw">
+                        +1
+                    </div>
+                    <button class="exp-button skillBtn" id="consSP"><i class="fa fa-cog fa-spin"></i></button>
+                </div>
+                <h3 class="minor-titles">Skills Affected</h3>
+                <ul>
+                    <li>Nothing</li>
+                </ul>
+                <button class="col-12 text-center exp-button" id="cons-btn">Roll</button>
+            </div>
+        </div>
+    </div>
+    <div class="card-deck">
+        <div class="card bg-inpage mt-2">
+            <div class="card-body ">
+                <div class="flex-row d-flex ">
+                    <h3 class="card-title minor-titles"> Intelligence-</h3>
+                    <div class="ability" id="int-base">
+                        12
+                    </div>
+                    <div class="throws" id="int-throw">
+                        +1
+                    </div>
+                    <button class="exp-button skillBtn" id="intSP"><i class="fa fa-cog fa-spin"></i></button>
+                </div>
+                <h3 class="minor-titles">Skills Affected</h3>
+                <ul>
+                    <li> -Arcana </li>
+                    <li> -History </li>
+                    <li> -Investigation </li>
+                    <li> -Nature </li>
+                    <li> -Religion </li>
+                </ul>
+                <button class="col-12 text-center exp-button" id="int-btn">Roll</button>
+            </div>
+        </div>
+        <div class="card bg-inpage mt-2">
+            <div class="card-body">
+                <div class="flex-row d-flex ">
+                    <h3 class="card-title minor-titles"> Wisdom-</h3>
+                    <div class="ability" id="wis-base">
+                        12
+                    </div>
+                    <div class="throws" id="wis-throw">
+                        +1
+                    </div>
+                    <button class="exp-button skillBtn" id="wisSP"><i class="fa fa-cog fa-spin"></i></button>
+                </div>
+                <h3 class="minor-titles">Skills Affected</h3>
+                <ul>
+                    <li> -Animal Handling  </li>
+                    <li> -Insight  </li>
+                    <li> -Medicine  </li>
+                    <li> -Perception  </li>
+                    <li> -Survival  </li>
+                </ul>
+                <button class="col-12 text-center exp-button" id="wis-btn">Roll</button>
+            </div>
+        </div>
+        <div class="card bg-inpage mt-2">
+            <div class="card-body ">
+                <div class="flex-row d-flex ">
+                    <h3 class="card-title minor-titles"> Charisma-</h3>
+                    <div class="ability" id="char-base">
+                        12
+                    </div>
+                    <div class="throws" id="char-throw">
+                                    
+                    </div>
+                    <button class="exp-button skillBtn" id="charSP"><i class="fa fa-cog fa-spin"></i></button>
+                </div>
+                <h3 class="minor-titles">Skills Affected</h3>
+                <ul>
+                    <li> -Deception </li>
+                    <li> -Intimidation </li>
+                    <li> -Performance </li>
+                    <li> -Persuasion </li>
+                </ul>
+                <button class="col-12 text-center exp-button" id="char-btn">Roll</button>
+            </div>
+        </div>
+    </div>
+</div>
+            
+</section>
+<section id="skills" class="collapse">
+    <div class="card card-body bg-page py-5 box-shadow text-center">
+        <h2>Skills</h2>
+        <p>What powers does your character have?</p>
+    </div>
+    <div class="card card-body py-5 section-container  bg-page">
+        <div class="card-deck ">
+            <div class="card bg-inpage mt-2 ">
+                <div class="card-body ">
+                    <div class="blockTitles" >
+                        <h3 class="card-title minor-titles"> Feats</h3>
+                    </div>  
+                    <div>
+                        <div >
+                            <h3 class="minor-titles" data-toggle="collapse" data-target="#feat1">Ritual Caster - Wizard</h3>
+                            <div id="feat1" class="collapse">
+                                <p>
+                                    When you choose this feat, you acquire a ritual book holding two 1st-level spells of your choice.
+                                    The process of copying the spell into your ritual book takes 2 hours per level of the spell, and costs 50 gp per level.
+                                </p>
+                                <ul>
+                                    <li><strong>Sleep</strong> - <p>This spell sends creatures into a magical slumber. Roll 5d8, the total is how many hit points of creatures this spell can affect…</p></li>
+                                    <li><strong>Hideous Laughter</strong> - <p> A creature of your choice that you can see within range perceives everything as hilariously funny and falls into fits of laugher if this spell affects it. The target must succeed on a Wisdom saving throw of fall prone, becoming incapacitated and unable to stand up for the duration…</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                            
+                </div>
+            </div>
+            <div class="card bg-inpage mt-2">
+                <div class="card-body ">
+                    <div class="blockTitles" >
+                        <h3 class="card-title minor-titles "> Spells</h3>
+                    </div>
+                    <div>
+                        <h3 class="minor-titles" data-toggle="collapse" data-target="#spells">Cleric Spells</h3>
+                        <div id="spells" class="collapse">
+                            <div>
+                                <h4 class="minor-titles" data-toggle="collapse" data-target="#spell0">Cantrips</h4>
+                                <ul id="spell0" class="collapse"></ul>
+                                <h4 class="minor-titles" data-toggle="collapse" data-target="#spell1">Level 1</h4>
+                                <ul id="spell1" class="collapse"></ul>
+                                <h4 class="minor-titles" data-toggle="collapse" data-target="#spell2">Level 2</h4>
+                                <ul id="spell2" class="collapse"></ul>
+                                <h4 class="minor-titles" data-toggle="collapse" data-target="#spell3">Level 3</h4>
+                                <ul id="spell3" class="collapse"></ul>
+                                <h4 class="minor-titles" data-toggle="collapse" data-target="#spell4">Level 4</h4>
+                                <ul id="spell4" class="collapse"></ul>
+                                <h4 class="minor-titles" data-toggle="collapse" data-target="#spell5">Level 5</h4>
+                                <ul id="spell5" class="collapse"></ul>
+                                <h4 class="minor-titles" data-toggle="collapse" data-target="#spell6">Level 6</h4>
+                                <ul id="spell6" class="collapse"></ul>
+                                <h4 class="minor-titles" data-toggle="collapse" data-target="#spell7">Level 7</h4>
+                                <ul id="spell7" class="collapse"></ul>
+                                <h4 class="minor-titles" data-toggle="collapse" data-target="#spell8">Level 8</h4>
+                                <ul id="spell8" class="collapse"></ul>
+                                <h4 class="minor-titles" data-toggle="collapse" data-target="#spell9">Level 9</h4>
+                                <ul id="spell9" class="collapse"></ul>
+                                    
+                            </div>
+                        </div>
+                                
+                    </div>
+                            
+                </div>
+            </div>
+            <div class="card bg-inpage mt-2">
+                <div class="card-body">
+                    <div class="blockTitles" >
+                        <h3 class="card-title minor-titles "> Other Proficiencies and Languages</h3>
+                    </div>
+                    <div class="flex-row d-flex">
+                        <div class="languages">
+                            <h3 class="minor-titles">Weapon Proficiences</h3>
+                            <ul>
+                                <li>Sling</li>
+                                <li>One Handed Mace</li>
+                                <li>Two Handed Mace</li>
+                            </ul>
+                            <h3 class="minor-titles">Languages</h3>
+                            <ul>
+                                <li>Common</li>
+                                <li>Dwarvish</li>
+                                <li>Infernal</li>
+                                <li>Primordial</li>
+                            </ul>                                   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="gear" class="collapse">
+    <div class="card card-body bg-page py-5 box-shadow text-center">
+        <h2>Gear</h2>
+        <p>What is weighing down your pockets?</p>
+    </div>
+    <div class="card card-body py-5 section-container  bg-page">
+        <div class="card-deck ">
+            <div class="card bg-inpage mt-2 ">
+                <div class="card-body ">
+                    <div class="blockTitles">
+                        <h3 class="card-title minor-titles"> Currency</h3>
+                    </div>
+                    <div class="card-text ">
+                        <div class="form-inline">
+                            <h3 class="card-title">Copper:</h3>
+                            <h3 id="copper" class="card-title pl-3">0</h3>
+                        </div>
+                        <div class="form-inline">
+                            <i class="fa fa-stop-circle fa-2x d-block p-2 pt-0 copper"></i>
+                            <input type="number" id="copperValue" class="moneyTextBox"/>
+                            <button  onclick="addCopper()" class="exp-button">+</button>
+                            <button onclick="subCopper()" class="exp-button pl-2 pr-2">-</button>
+                        </div>
+                        <div class="form-inline">
+                            <h3 class="card-title">Silver:</h3>
+                            <h3 id="silver" class="card-title pl-3">0</h3>
+                        </div>
+                        <div class="form-inline">
+                            <i class="fa fa-stop-circle fa-2x d-block p-2 silver"></i>
+                            <input type="number" id="silverValue" class="moneyTextBox" />
+                            <button onclick="addSilver()" class="exp-button">+</button>
+                            <button onclick="subSilver()" class="exp-button pl-2 pr-2">-</button>
+                        </div>
+                        <div class="form-inline">
+                            <h3 class="card-title">Gold:</h3>
+                            <h3 id="gold" class="card-title pl-3">0</h3>
+                        </div>
+                        <div class="form-inline">
+                            <i class="fa fa-stop-circle fa-2x d-block p-2 gold"></i>
+                            <input type="number" id="goldValue" class="moneyTextBox" />
+                            <button onclick="addGold()" class="exp-button">+</button>
+                            <button onclick="subGold()" class="exp-button pl-2 pr-2">-</button>
+                        </div>
+                        <div class="form-inline">
+                            <h3 class="card-title">Platinum:</h3>
+                            <h3 id="platinum" class="card-title pl-3">0</h3>
+                        </div>
+                        <div class="form-inline">
+                            <i class="fa fa-stop-circle fa-2x d-block p-2 platinum"></i>
+                            <input type="number" id="platinumValue" class="moneyTextBox" />
+                            <button onclick="addPlatinum()" class="exp-button"> + </button>
+                            <button onclick="subPlatinum()" class="exp-button pl-2 pr-2"> - </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card bg-inpage mt-2 ">
+                <div class="card-body ">
+                    <div class="blockTitles">
+                        <h3 class="card-title minor-titles"> Supplies</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck ">
+            <div class="card bg-inpage mt-2 ">
+                <div class="card-body ">
+                    <div class="blockTitles">
+                        <h3 class="card-title minor-titles"> Armor</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-inpage mt-2 ">
+                <div class="card-body ">
+                    <div class="blockTitles">
+                        <h3 class="card-title minor-titles"> Weapon</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</section>
+
+<section id="backStory" class="collapse">
+    <div class="card card-body bg-page py-5 box-shadow text-center">
+        <h2>Back Story</h2>
+        <p>This is where your tragic backstory unfolds</p>
+    </div>
+    <div class="card card-body py-5 section-container bg-offwhite">
+        <p class="Bstory">This is the tragic backstory welcome to the pain I have been through</p>
+    </div>
+</section>
+
+<!--Footer-->
+<footer id="main-footer" class="p-5 bg-dark text-white">
+    <div class="row">
+        <div class="col-4 p-2">
+            <button class="dice-img" id="d20"  onclick="d20()">
+                <div class="dice-button">
+                    <p id="D20">20</p>
+                </div>
+            </button>
+        </div>
+        <div class="col-4 p-2">
+            <button class="dice-img" id="d12" onclick="d12()">
+                <div class="dice-button">
+                    <p id="D12">12</p>
+                </div>
+            </button>
+        </div>
+        <div class="col-4 p-2">
+            <button class="dice-img" id="d10" onclick="d10()">
+                <div class="dice-button">
+                    <p id="D10">10</p>
+                </div>
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 p-2">
+            <button class="dice-img" id="d8" onclick="d8()">
+                <div class="dice-button">
+                    <p id="D8">08</p>
+                </div>
+            </button>
+        </div>
+        <div class="col-4 p-2">
+            <button class="dice-img" id="d6" onclick="d6()">
+                <div class="dice-button">
+                    <p id="D6">06</p>
+                </div>
+            </button>
+        </div>
+        <div class="col-4 p-2">
+            <button class="dice-img" id="d4" onclick="d4()">
+                <div class="dice-button">
+                    <p id="D4">04</p>
+                </div>
+            </button>
+        </div>
+    </div>
+</footer>
+<div id="thing">
+
+</div>
+</div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+<script src="/Scripts/Character/ajax.js"></script>
+<script src="/Scripts/Character/popper.min.js"></script>
+<script src="/Scripts/Character/scripts.js"></script>
+</body>
+</html>
+
+
