@@ -246,10 +246,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Bootstrap4\bootstrap-grid.css" />
     <Content Include="Content\Bootstrap4\bootstrap-grid.min.css" />
     <Content Include="Content\Bootstrap4\bootstrap-reboot.css" />
@@ -262,7 +258,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Content\Fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\charCleric.png" />
     <Content Include="Images\Cleric.png" />
@@ -297,12 +292,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Bootstrap4\bootstrap-grid.css.map" />
-    <Content Include="Content\Bootstrap4\bootstrap-grid.min.css.map" />
-    <Content Include="Content\Bootstrap4\bootstrap-reboot.css.map" />
-    <Content Include="Content\Bootstrap4\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\Bootstrap4\bootstrap.css.map" />
-    <Content Include="Content\Bootstrap4\bootstrap.min.css.map" />
     <Content Include="Content\Character\fontawesome-webfont.eot" />
     <Content Include="Content\Character\fontawesome-webfont.ttf" />
     <Content Include="Content\Character\fontawesome-webfont.woff" />
@@ -314,22 +303,24 @@
     <Content Include="Content\Fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\Fonts\FontAwesome.otf" />
     <Content Include="ConnectionStrings.config" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Bootstrap4\bootstrap.bundle.js" />
+    <Content Include="Scripts\Bootstrap4\bootstrap.bundle.min.js" />
     <Content Include="Scripts\Bootstrap4\bootstrap.js" />
     <Content Include="Scripts\Bootstrap4\bootstrap.min.js" />
     <Content Include="Scripts\Character\ajax.js" />
     <Content Include="Scripts\Character\bootstrap.min.js" />
     <Content Include="Scripts\Character\popper.min.js" />
     <Content Include="Scripts\Character\scripts.js" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\Bootstrap4\bootstrap-grid.css.map" />
+    <Content Include="Content\Bootstrap4\bootstrap-grid.min.css.map" />
+    <Content Include="Content\Bootstrap4\bootstrap-reboot.css.map" />
+    <Content Include="Content\Bootstrap4\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\Bootstrap4\bootstrap.css.map" />
+    <Content Include="Content\Bootstrap4\bootstrap.min.css.map" />
+    <Content Include="Scripts\Bootstrap4\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\Bootstrap4\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\Bootstrap4\bootstrap.js.map" />
+    <Content Include="Scripts\Bootstrap4\bootstrap.min.js.map" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />

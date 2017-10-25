@@ -1,6 +1,6 @@
 body {
     background-color: #d0d0d0;
-    font-family: 'Almendra SC', serif;
+    font-family: 'Almendra SC', serif !important;
 }
 
 .characteristics {
@@ -24,7 +24,7 @@ h2 {
 }
 
 .Bstory {
-    font-family: 'Kaushan Script', cursive;
+    font-family: 'Kaushan Script', cursive !important;
 }
 
 .bg-black {

@@ -30,8 +30,11 @@ namespace Core
                 .Include("~/Scripts/Character/*.js"));
 
             bundles.Add(new StyleBundle("~/styleBundles/Character")
+                .Include("~/Content/Character/font-awesome.min.css")
                 .Include("~/Content/Character/*.css")
                 .Include("~/Content/Bootstrap4/*.css"));
+
+            BundleTable.EnableOptimizations = false;
         }
     }
 }
