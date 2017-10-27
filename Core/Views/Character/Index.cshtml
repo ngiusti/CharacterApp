@@ -16,10 +16,12 @@
     @*<link href="~/Content/Bootstrap4/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/Character/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/Character/style.css" rel="stylesheet" />*@
+
+
     @Styles.Render("~/styleBundles/Character")
     <link href="https://fonts.googleapis.com/css?family=Almendra+SC|Kaushan+Script|Metal+Mania" rel="stylesheet">
 </head>
-<body>  
+<body id="body">  
 <div class="container container-border">
 <header id="main-header">
     <div class="row no-gutters">
@@ -183,7 +185,7 @@
         <div class="card bg-inpage mt-2">
             <div class="card-body">
                 <div class="flex-row d-flex ">
-                    <h3 class="card-title minor-titles"> Strength-</h3>
+                    <h3 class="card-title minor-titles"> STR-</h3>
                     <div class="ability" id="str-base">
                         12
                     </div>
@@ -202,7 +204,7 @@
         <div class="card bg-inpage mt-2">
             <div class="card-body">
                 <div class="flex-row d-flex ">
-                    <h3 class="card-title minor-titles"> Dexterity-</h3>
+                    <h3 class="card-title minor-titles"> DEX-</h3>
                     <div class="ability" id="dex-base">
                         12
                     </div>
@@ -223,7 +225,7 @@
         <div class="card bg-inpage mt-2">
             <div class="card-body">
                 <div class="flex-row d-flex ">
-                    <h3 class="card-title minor-titles"> Constitution-</h3>
+                    <h3 class="card-title minor-titles"> CONS-</h3>
                     <div class="ability" id="cons-base">
                         12
                     </div>
@@ -244,7 +246,7 @@
         <div class="card bg-inpage mt-2">
             <div class="card-body ">
                 <div class="flex-row d-flex ">
-                    <h3 class="card-title minor-titles"> Intelligence-</h3>
+                    <h3 class="card-title minor-titles"> INT-</h3>
                     <div class="ability" id="int-base">
                         12
                     </div>
@@ -267,7 +269,7 @@
         <div class="card bg-inpage mt-2">
             <div class="card-body">
                 <div class="flex-row d-flex ">
-                    <h3 class="card-title minor-titles"> Wisdom-</h3>
+                    <h3 class="card-title minor-titles"> WIS-</h3>
                     <div class="ability" id="wis-base">
                         12
                     </div>
@@ -290,7 +292,7 @@
         <div class="card bg-inpage mt-2">
             <div class="card-body ">
                 <div class="flex-row d-flex ">
-                    <h3 class="card-title minor-titles"> Charisma-</h3>
+                    <h3 class="card-title minor-titles"> CHAR-</h3>
                     <div class="ability" id="char-base">
                         12
                     </div>
@@ -558,6 +560,10 @@
 
 </div>
 </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
 <script src="/Scripts/Character/ajax.js"></script>

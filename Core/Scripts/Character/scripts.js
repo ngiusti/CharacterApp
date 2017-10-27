@@ -34,13 +34,11 @@ var lifestyle = "Kleptomaniac";
 
 /*---Character Stats---*/
 
-/*---connection to other script files---*/
-//$.getScript('/js/ajax.js', function () { });
-/*---connection to other script files END---*/
 
 $('.port-item').click(function () {
     $('.collapse').collapse('hide');
 });
+
 
 function d20() {
     var x = Math.floor(Math.random() * 20 + 1);
@@ -111,7 +109,7 @@ function characteristics() {
 document.getElementById("str-btn").onclick = function () {
     var x = roll();
     if (x === 1) {
-        document.getElementById("attribute").innerHTML = x;
+        rollOne();
     }
     else {
         document.getElementById("attribute").innerHTML = x + throwCalculation(str);
@@ -120,7 +118,7 @@ document.getElementById("str-btn").onclick = function () {
 document.getElementById("dex-btn").onclick = function () {
     var x = roll();
     if (x === 1) {
-        document.getElementById("attribute").innerHTML = x;
+        rollOne();
     }
     else {
         document.getElementById("attribute").innerHTML = x + throwCalculation(dex);
@@ -129,7 +127,7 @@ document.getElementById("dex-btn").onclick = function () {
 document.getElementById("wis-btn").onclick = function () {
     var x = roll();
     if (x === 1) {
-        document.getElementById("attribute").innerHTML = x;
+        rollOne();
     }
     else {
         document.getElementById("attribute").innerHTML = x + throwCalculation(wis);
@@ -138,7 +136,7 @@ document.getElementById("wis-btn").onclick = function () {
 document.getElementById("int-btn").onclick = function () {
     var x = roll();
     if (x === 1) {
-        document.getElementById("attribute").innerHTML = x;
+        rollOne();
     }
     else {
         document.getElementById("attribute").innerHTML = x + throwCalculation(int);
@@ -147,7 +145,7 @@ document.getElementById("int-btn").onclick = function () {
 document.getElementById("cons-btn").onclick = function () {
     var x = roll();
     if (x === 1) {
-        document.getElementById("attribute").innerHTML = x;
+        rollOne();
     }
     else {
         document.getElementById("attribute").innerHTML = x + throwCalculation(cons);
@@ -156,7 +154,7 @@ document.getElementById("cons-btn").onclick = function () {
 document.getElementById("char-btn").onclick = function () {
     var x = roll();
     if (x === 1) {
-        document.getElementById("attribute").innerHTML = x;
+        rollOne();
     }
     else {
         document.getElementById("attribute").innerHTML = x + throwCalculation(char);
@@ -165,7 +163,7 @@ document.getElementById("char-btn").onclick = function () {
 document.getElementById("inti-btn").onclick = function () {
     var x = roll();
     if (x === 1) {
-        document.getElementById("attribute").innerHTML = x;
+        rollOne();
     }
     else {
         document.getElementById("attribute").innerHTML = x + inti;
@@ -173,8 +171,17 @@ document.getElementById("inti-btn").onclick = function () {
 
 };
 
+function rollOne() {
+    document.getElementById("attribute").innerHTML = x;
+    document.getElementById("attribute").style.background = "black";
+    document.getElementById("attribute").style.color = "white";
+
+}
+
 
 function roll() {
+    document.getElementById("attribute").style.background = "white";
+    document.getElementById("attribute").style.color = "black";
     var x = Math.floor(Math.random() * 20 + 1);
     return x;
 }
@@ -512,6 +519,23 @@ function downChainInventory(value) {
 }
 /*-----Money Section END---*/
 
+
+switch (charClass) {
+    case 'Rogue':
+        console.log('you are a rogue');
+        break;
+    case 'Cleric':
+        console.log('you are a cleric');
+        document.getElementById("body").style.background = "#f0fc81 ";
+        break;
+    case 'Paladin':
+        console.log('you are a paladin');
+        document.getElementById("body").style.color = "red";
+
+        break;
+    default:
+        console.log('I dont know what you are');
+}
 
 /* ---- Everything on load starts here. ----*/
 $(document).ready(function () {

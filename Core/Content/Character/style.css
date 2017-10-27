@@ -107,7 +107,7 @@ h2 {
 
 
 .container-border {
-    border: 10px solid #292b2d;
+    border: 5px solid #292b2d;
     border-radius: 2em;
     background-color: #292b2d;
     padding:1em;
@@ -117,6 +117,7 @@ div.dice-button {
     margin: 30px;
     opacity: 0.9;
     filter: alpha(opacity=90); /* For IE8 and earlier */
+    object-fit: contain;
 
 }
 
@@ -130,7 +131,8 @@ div.dice-button {
 @media screen and (max-width: 420px) {
 
     .container-border {
-        border: 1em solid #292b2d;
+        border: 0.5em solid #292b2d;
+        border-top: 1em solid #292b2d;
         border-radius: 2em;
         background-color: #292b2d;
         padding: 0.2em;
@@ -163,7 +165,7 @@ div.dice-button {
 
     .tranBtn {
         margin-top: 70px;
-        margin-left: -7%;
+        margin-left: -10%;
     }
 
 }
@@ -175,7 +177,7 @@ div.dice-button {
 
 @media screen and (min-width: 568px) {
     
-    .dice-Images{
+    .dice-img{
         margin-left:25%;
     }
 
@@ -187,12 +189,12 @@ div.dice-button {
     }
 }
 
-.dice-Images:hover {
+.dice-img:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
-.dice-Images {
+.dice-img{
     border: 2px solid #343a40;
     background-size: contain !important;
     
