@@ -1,0 +1,129 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Money</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/scriptBundles/Angular")
+
+
+    <script>
+        angular.module('app', []);
+    </script>
+    @Scripts.Render("~/scriptBundles/Money")
+</head>
+<body xmlns:ng="http://angularjs.org" ng-app="app">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="container" ng-controller="MoneyController as money" style="margin-top: 70px;">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label class="sr-only">Amount (in dollars)</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" ng-model="money.platinumIn" placeholder="Amount">
+                        <div class="input-group-addon">Platinum</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label class="sr-only">Amount (in dollars)</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" ng-model="money.goldIn" placeholder="Amount">
+                        <div class="input-group-addon">Gold</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label class="sr-only">Amount (in dollars)</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" ng-model="money.silverIn" placeholder="Amount">
+                        <div class="input-group-addon">Silver</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label class="sr-only">Amount (in dollars)</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" ng-model="money.copperIn" placeholder="Amount">
+                        <div class="input-group-addon">Copper</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <button class="btn btn-primary" ng-click="money.addMoney()">Add money to pouch</button>
+            </div>
+        </div>
+        <div class="row">
+            <hr />
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Total coins: {{money.money}}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Platinum</div>
+                    <div class="panel-body">
+                        {{money.platinum}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Gold</div>
+                    <div class="panel-body">
+                        {{money.gold}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Silver</div>
+                    <div class="panel-body">
+                        {{money.silver}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Copper</div>
+                    <div class="panel-body">
+                        {{money.copper}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

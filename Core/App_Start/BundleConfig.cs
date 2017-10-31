@@ -20,9 +20,8 @@ namespace Core
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css")
+                .Include("~/Content/bootstrap.css"));
 
             //Character page bundles
             bundles.Add(new ScriptBundle("~/scriptBundles/Character")
@@ -34,6 +33,19 @@ namespace Core
                 .Include("~/Content/Character/*.css")
                 .Include("~/Content/Bootstrap4/*.css"));
 
+            bundles.Add(new ScriptBundle("~/scriptBundles/Bootstrap4")
+                .Include("~/Scripts/Bootstrap4/*.js"));
+
+            bundles.Add(new StyleBundle("~/styleBundles/Bootstrap4")
+                .Include("~/Content/Bootstrap4/*.css"));
+
+            bundles.Add(new ScriptBundle("~/scriptBundles/Angular")
+                .Include("~/Scripts/angular.js")
+                );
+
+            bundles.Add(new ScriptBundle("~/scriptBundles/Money")
+                .Include("~/Angular/Controllers/*.js")
+            );
             BundleTable.EnableOptimizations = false;
         }
     }
