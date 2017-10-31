@@ -309,7 +309,6 @@
     <Content Include="Content\Fonts\fontawesome-webfont.woff" />
     <Content Include="Content\Fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\Fonts\FontAwesome.otf" />
-    <Content Include="ConnectionStrings.config" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
